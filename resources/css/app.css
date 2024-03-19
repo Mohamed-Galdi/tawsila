@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* madani font (local) */
+@layer base {
+@font-face {
+        font-family: "pr";
+        font-weight: 400;
+        src: url("../../public/assets/fonts/Air-Strip-Arabic.ttf");
+    }
+@font-face {
+    font-family: "sec";
+    font-weight: 400;
+    src: url("../../public/assets/fonts/ntaqat.ttf");
+}
+}
