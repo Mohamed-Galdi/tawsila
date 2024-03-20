@@ -22,6 +22,9 @@ Route::get('/about-us', function () {
 Route::get('/contact-us', function () {
     return view('home.contact_us');
 });
-Route::get('/register', function () {
-    return view('authentication.register');
+Route::get('/student-register', function () {
+    return view('authentication.student_register');
+});
+Route::get('/driver-register', function () {
+    return view('authentication.driver_register');
 });
