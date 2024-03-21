@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class University extends Model
 {
     use HasFactory;
+
+    public function trips()
+    {
+        return $this->hasMany(Trip::class);
+    }
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\RegistrationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,9 +23,13 @@ Route::get('/about-us', function () {
 Route::get('/contact-us', function () {
     return view('home.contact_us');
 });
+
+/////////////////////// Authentication /////////////////////////
 Route::get('/student-register', function () {
     return view('authentication.student_register');
 });
 Route::get('/driver-register', function () {
     return view('authentication.driver_register');
 });
+Route::post('/student-register', [RegistrationController::class, 'studentRegister'])->name('studentRegister');
+Route::post('/driver-register', [RegistrationController::class, 'driverRegister'])->name('driverRegister');

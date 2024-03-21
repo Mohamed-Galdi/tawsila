@@ -5,11 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Tawsila</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
+
+    <title>{{ config('app.name', 'Tawsila') }}</title>
     @vite('resources/css/app.css')
-    @vite('resources/css/register.css')
     @vite('node_modules/flowbite/dist/flowbite.min.js')
+
 
     {{-- favicon --}}
     <link rel="icon" type="image/x-icon" href="/assets/graphics/logos/favicon.png">
@@ -250,6 +253,7 @@
                 الحقوق محفوضة</span>
         </div>
     </footer>
+    @include('sweetalert::alert')
 </body>
 
 </html>

@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Area extends Model
 {
     use HasFactory;
+    
+    public function trips()
+    {
+        return $this->hasMany(Trip::class);
+    }
 }
