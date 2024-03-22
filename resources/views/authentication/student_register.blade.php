@@ -2,11 +2,12 @@
 @section('content')
     <div style="background-image: url('./assets/graphics/images/bg.svg')"
         class=" h-[90vh] grid place-items-center bg-no-repeat bg-cover bg-buttom ">
-        <div class=" w-2/3 h-4/5 rounded-3xl shadow-2xl flex overflow-hidden">
-            <div class="h-full w-2/3 backdrop-blur-sm bg-white/30 grid place-items-center p-8">
+        <div
+            class="md:w-3/4 w-4/5 lg:w-2/3 min-h-[70vh] rounded-3xl shadow-2xl flex overflow-hidden mx-auto max-w-screen-xl">
+            <div class=" w-full lg:w-2/3 md:w-1/2 backdrop-blur-sm bg-white/30 grid place-items-center p-8">
                 <form class="w-full" action="{{ route('studentRegister') }}" enctype="multipart/form-data" method="POST">
                     @csrf
-                    <div class="w-full flex gap-6">
+                    <div class="w-full lg:flex gap-6">
                         <div class="relative z-0 w-full mb-5 group">
                             <input type="text" name="name" id="floating_name" value="{{ old('name') }}"
                                 class="block py-2.5 px-0 w-full text-lg text-gray-900 bg-transparent border-0 border-b-2 border-white focus:outline-none focus:ring-0 focus:border-soft_black peer"
@@ -40,7 +41,7 @@
                             class="peer-focus:font-medium font-sec font-bold absolute text-lg text-soft_black  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:soft_black peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
                             البريد الإلكتروني</label>
                     </div>
-                    <div class="flex gap-6">
+                    <div class="lg:flex gap-6">
                         <div class="relative z-0 w-full mb-5 group">
                             <input type="password" name="password" id="floating_password"
                                 class="block py-2.5 px-0 w-full text-lg text-gray-900 bg-transparent border-0 border-b-2 border-white focus:outline-none focus:ring-0 focus:border-soft_black peer"
@@ -69,13 +70,14 @@
                         type="submit">إنشاء حساب</button>
 
                 </form>
-                <a href="driver-register"><button class="bg-soft_black text-white font-pr p-2 rounded-lg flex gap-2">التسجيل
+                <a class="mt-6" href="driver-register"><button
+                        class="bg-soft_black text-white font-pr p-2 rounded-lg flex gap-2">التسجيل
                         كسائق
                         <img src="./assets/graphics/images/drvr.png" alt="" class="max-w-6">
                     </button></a>
 
             </div>
-            <div class="h-full w-1/3 bg-gradient-to-t from-soft_black to-tawsila-400 relative">
+            <div class="hidden md:block lg:w-1/3 w-1/2 bg-gradient-to-t from-soft_black to-tawsila-400 relative">
                 <h2 class="font-pr text-4xl text-center mt-20 text-soft_black">التسجيل كطالبة</h2>
                 <img class=" absolute bottom-0" src="./assets/graphics/images/student.png" alt="">
             </div>

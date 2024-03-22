@@ -8,9 +8,10 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-
     <title>{{ config('app.name', 'Tawsila') }}</title>
+
     @vite('resources/css/app.css')
+    @vite('resources/css/animation.css')
     @vite('node_modules/flowbite/dist/flowbite.min.js')
 
 
@@ -159,31 +160,33 @@
                             </div>
                             {{-- mobile register button --}}
                             <div class=" flex items-center justify-center cursor-pointer">
-                                <div
-                                    class="relative inline-flex items-center justify-start py-3 pl-4 pr-12 overflow-hidden font-semibold shadow text-soft_black transition-all duration-150 ease-in-out rounded hover:pl-10 hover:pr-6 bg-gray-50 dark:bg-gray-700 dark:text-white dark:hover:text-gray-200 dark:shadow-none group">
-                                    <span
-                                        class="absolute bottom-0 left-0 w-full h-1 transition-all duration-150 ease-in-out bg-soft_black group-hover:h-full"></span>
-                                    <span
-                                        class="absolute right-0 pr-4 duration-200 ease-out group-hover:translate-x-12">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" fill="#000"
-                                            class="w-5 h-5 text-tawsila-500">
-                                            <path
-                                                d="M96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM0 482.3C0 383.8 79.8 304 178.3 304h91.4C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7H29.7C13.3 512 0 498.7 0 482.3zM504 312V248H440c-13.3 0-24-10.7-24-24s10.7-24 24-24h64V136c0-13.3 10.7-24 24-24s24 10.7 24 24v64h64c13.3 0 24 10.7 24 24s-10.7 24-24 24H552v64c0 13.3-10.7 24-24 24s-24-10.7-24-24z" />
-                                        </svg>
-                                    </span>
-                                    <span
-                                        class="absolute left-0 pl-2.5 -translate-x-12 group-hover:translate-x-0 ease-out duration-200">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" fill="#fff"
-                                            class="w-5 h-5 text-tawsila-500">
-                                            <path
-                                                d="M96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM0 482.3C0 383.8 79.8 304 178.3 304h91.4C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7H29.7C13.3 512 0 498.7 0 482.3zM504 312V248H440c-13.3 0-24-10.7-24-24s10.7-24 24-24h64V136c0-13.3 10.7-24 24-24s24 10.7 24 24v64h64c13.3 0 24 10.7 24 24s-10.7 24-24 24H552v64c0 13.3-10.7 24-24 24s-24-10.7-24-24z" />
-                                        </svg>
-                                    </span>
-                                    <span
-                                        class="relative text-nowrap w-full text-left transition-colors duration-200 ease-in-out group-hover:text-white dark:group-hover:text-gray-200 font-pr">إنشاء
-                                        حساب
-                                    </span>
-                                </div>
+                                <a href="{{ route('studentRegister') }}">
+                                    <div
+                                        class="relative inline-flex items-center justify-start py-3 pl-4 pr-12 overflow-hidden font-semibold shadow text-soft_black transition-all duration-150 ease-in-out rounded hover:pl-10 hover:pr-6 bg-gray-50 dark:bg-gray-700 dark:text-white dark:hover:text-gray-200 dark:shadow-none group">
+                                        <span
+                                            class="absolute bottom-0 left-0 w-full h-1 transition-all duration-150 ease-in-out bg-soft_black group-hover:h-full"></span>
+                                        <span
+                                            class="absolute right-0 pr-4 duration-200 ease-out group-hover:translate-x-12">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" fill="#000"
+                                                class="w-5 h-5 text-tawsila-500">
+                                                <path
+                                                    d="M96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM0 482.3C0 383.8 79.8 304 178.3 304h91.4C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7H29.7C13.3 512 0 498.7 0 482.3zM504 312V248H440c-13.3 0-24-10.7-24-24s10.7-24 24-24h64V136c0-13.3 10.7-24 24-24s24 10.7 24 24v64h64c13.3 0 24 10.7 24 24s-10.7 24-24 24H552v64c0 13.3-10.7 24-24 24s-24-10.7-24-24z" />
+                                            </svg>
+                                        </span>
+                                        <span
+                                            class="absolute left-0 pl-2.5 -translate-x-12 group-hover:translate-x-0 ease-out duration-200">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"
+                                                fill="#fff" class="w-5 h-5 text-tawsila-500">
+                                                <path
+                                                    d="M96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM0 482.3C0 383.8 79.8 304 178.3 304h91.4C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7H29.7C13.3 512 0 498.7 0 482.3zM504 312V248H440c-13.3 0-24-10.7-24-24s10.7-24 24-24h64V136c0-13.3 10.7-24 24-24s24 10.7 24 24v64h64c13.3 0 24 10.7 24 24s-10.7 24-24 24H552v64c0 13.3-10.7 24-24 24s-24-10.7-24-24z" />
+                                            </svg>
+                                        </span>
+                                        <span
+                                            class="relative text-nowrap w-full text-left transition-colors duration-200 ease-in-out group-hover:text-white dark:group-hover:text-gray-200 font-pr">إنشاء
+                                            حساب
+                                        </span>
+                                    </div>
+                                </a>
                             </div>
                         </li>
                     </ul>
