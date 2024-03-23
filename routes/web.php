@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\RegistrationController;
 use Illuminate\Support\Facades\Route;
+use RealRashid\SweetAlert\Facades\Alert;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +24,10 @@ Route::get('/about-us', function () {
 Route::get('/contact-us', function () {
     return view('home.contact_us');
 });
+Route::post('/contact-us', function () {
+    Alert::success('تم إستقبال رسالتك، سنرد عليك في أقرب وقت');
+    return redirect()->back();
+})->name('contactUs');
 
 /////////////////////// Authentication /////////////////////////
 Route::get('/student-register', function () {
