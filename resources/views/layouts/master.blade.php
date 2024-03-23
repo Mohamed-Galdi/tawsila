@@ -119,6 +119,11 @@
                                 الرئيسية
                             </li>
                         </a>
+                        <a href="{{ url('/trips') }}">
+                            <li
+                                class=" p-2  font-pr {{ Request::is('trips') ? 'bg-black text-white rounded-lg border-2 border-black ' : 'text-black border-b border-pr md:hover:border-black md:hover:border-b-2 md:hover:bg-pr hover:bg-tawsila-600 md:rounded-none rounded-lg ' }}">
+                                الرحلات </li>
+                        </a>
                         <a href="{{ url('/about-us') }}">
                             <li
                                 class=" p-2  font-pr {{ Request::is('about-us') ? 'bg-black text-white rounded-lg border-2 border-black ' : 'text-black border-b border-pr md:hover:border-black md:hover:border-b-2 md:hover:bg-pr hover:bg-tawsila-600 md:rounded-none rounded-lg ' }}">
@@ -257,6 +262,7 @@
         </div>
     </footer>
     @include('sweetalert::alert')
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </body>
 
 </html>
