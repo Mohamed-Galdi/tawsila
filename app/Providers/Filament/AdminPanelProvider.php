@@ -30,6 +30,10 @@ class AdminPanelProvider extends PanelProvider
             ->colors([
                 'primary' => Color::Amber,
             ])
+            // ->font('sec')
+            ->brandName('توصيلة')
+            ->brandLogo(asset('assets/graphics/logos/big_logo.png'))
+            ->favicon(asset('assets/graphics/logos/favicon.png'))
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->pages([

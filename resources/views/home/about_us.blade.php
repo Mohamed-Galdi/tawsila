@@ -4,14 +4,14 @@
         {{-- //////////// Our Story /////////////////// --}}
         <div class="flex justify-between gap-8 ">
             <div class="md:w-5/12 w-full md:px-0 px-4 flex flex-col justify-center md:pb-8 ">
-                <h1 class="text-4xl lg:text-6xl font-pr  font-bold leading-9 text-gray-800 dark:text-white text-center pb-4">
+                <h1 class="text-4xl lg:text-6xl font-pr  font-bold leading-9 text-gray-800 text-center pb-4">
                     قصتنا </h1>
                 <div class="md:hidden fade3 md:w-1/2 flex justify-center">
                     <img class="w-2/3 object-fit h-fit" src="./assets/graphics/images/female_devs.png"
                         alt="A group of People" />
                 </div>
                 <p
-                    class="font-normal font-sec lg:text-2xl text-xl text-justify line leading-loose text-gray-600 dark:text-white">
+                    class="font-normal font-sec lg:text-2xl text-xl text-justify line leading-loose text-gray-600">
                     بدأت
                     قصتنا برؤية بسيطة: تسهيل عملية نقل الطلاب إلى مدارسهم بأمان وسهولة. تجمعنا في فريق واحد، مؤمنات بأهمية
                     التكنولوجيا في تحسين حياة المجتمع، وبدأنا في بناء منصة "توصيلة" بشغف وإصرار. تطورت الفكرة مع الوقت، وتم
@@ -28,7 +28,7 @@
         <div class="flex lg:flex-row flex-col justify-between gap-8 pt-12">
             {{-- //////////// Who we are /////////////////// --}}
             <div class="w-full lg:w-5/12 flex flex-col justify-center">
-                <h1 class="text-3xl lg:text-4xl font-bold leading-9 text-gray-800 dark:text-white pb-4 font-pr"> من نحن</h1>
+                <h1 class="text-3xl lg:text-4xl font-bold leading-9 text-gray-800 pb-4 font-pr"> من نحن</h1>
                 <p class="font-sec text-xl  text-justify">
                     نحن فريق من المطورات العربيات اللاتي يؤمنّ بالقوة الإبداعية للمرأة في مجال تطوير التقنية. قمنا ببناء
                     منصة
