@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Controllers\RegistrationController;
+use App\Models\AboutPage;
+use App\Models\ContactPage;
+use App\Models\HomePage;
 use Illuminate\Support\Facades\Route;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -16,13 +19,16 @@ use RealRashid\SweetAlert\Facades\Alert;
 */
 
 Route::get('/', function () {
-    return view('home.home');
+    $content = HomePage::first();
+    return view('home.home', ['content' => $content]);
 });
 Route::get('/about-us', function () {
-    return view('home.about_us');
+    $content = AboutPage::first();
+    return view('home.about_us', ['content' => $content]);
 });
 Route::get('/contact-us', function () {
-    return view('home.contact_us');
+    $content = ContactPage::first();
+    return view('home.contact_us', ['content' => $content]);
 });
 Route::post('/contact-us', function () {
     Alert::success('تم إستقبال رسالتك، سنرد عليك في أقرب وقت');

@@ -21,7 +21,8 @@
                         </svg>
                         <h3 class="font-sec">رقم الهاتف
                         </h3>
-                        <p dir="ltr" class="font-pr mt-2 bg-pr px-2 rounded-lg md:w-fit w-2/3 ">00966 2 5466140</p>
+                        <p dir="ltr" class="font-pr mt-2 bg-pr px-2 rounded-lg md:w-fit w-2/3 ">{{ $content->phone }}
+                        </p>
                     </div>
                     <div class="flex flex-col justify-center items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-16">
@@ -29,7 +30,7 @@
                                 d="M215.4 96H144 107.8 96v8.8V144v40.4 89L.2 202.5c1.6-18.1 10.9-34.9 25.7-45.8L48 140.3V96c0-26.5 21.5-48 48-48h76.6l49.9-36.9C232.2 3.9 243.9 0 256 0s23.8 3.9 33.5 11L339.4 48H416c26.5 0 48 21.5 48 48v44.3l22.1 16.4c14.8 10.9 24.1 27.7 25.7 45.8L416 273.4v-89V144 104.8 96H404.2 368 296.6 215.4zM0 448V242.1L217.6 403.3c11.1 8.2 24.6 12.7 38.4 12.7s27.3-4.4 38.4-12.7L512 242.1V448v0c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64v0zM176 160H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H176c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H176c-8.8 0-16-7.2-16-16s7.2-16 16-16z" />
                         </svg>
                         <h3 class="font-sec">البريد الإلكتروني</h3>
-                        <p class="font-pr mt-2 bg-pr px-2 rounded-lg md:w-fit w-2/3">contact@tawsila.com</p>
+                        <p class="font-pr mt-2 bg-pr px-2 rounded-lg md:w-fit w-2/3">{{ $content->email }}</p>
                     </div>
                     <div class="flex flex-col justify-center items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="w-16">
@@ -37,7 +38,7 @@
                                 d="M408 120c0 54.6-73.1 151.9-105.2 192c-7.7 9.6-22 9.6-29.6 0C241.1 271.9 168 174.6 168 120C168 53.7 221.7 0 288 0s120 53.7 120 120zm8 80.4c3.5-6.9 6.7-13.8 9.6-20.6c.5-1.2 1-2.5 1.5-3.7l116-46.4C558.9 123.4 576 135 576 152V422.8c0 9.8-6 18.6-15.1 22.3L416 503V200.4zM137.6 138.3c2.4 14.1 7.2 28.3 12.8 41.5c2.9 6.8 6.1 13.7 9.6 20.6V451.8L32.9 502.7C17.1 509 0 497.4 0 480.4V209.6c0-9.8 6-18.6 15.1-22.3l122.6-49zM327.8 332c13.9-17.4 35.7-45.7 56.2-77V504.3L192 449.4V255c20.5 31.3 42.3 59.6 56.2 77c20.5 25.6 59.1 25.6 79.6 0zM288 152a40 40 0 1 0 0-80 40 40 0 1 0 0 80z" />
                         </svg>
                         <h3 class="font-sec">موقع مركزنا</h3>
-                        <p class="font-pr mt-2 bg-pr px-2 rounded-lg md:w-fit w-2/3">الرياض -حي الملقا - انس مالك
+                        <p class="font-pr mt-2 bg-pr px-2 rounded-lg md:w-fit w-2/3">{{ $content->address }}
                         </p>
                     </div>
                 </div>

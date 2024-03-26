@@ -6,11 +6,9 @@
             {{-- Left Side --}}
             <div class="bg-greeen-500 w-1/2 flex flex-col justify-center items-center gap-2 mr-8 xl:mr-0">
                 <h1 class="fade text-soft_black font-pr xl:text-7xl text-5xl text-center p-4 ">
-                    توصيلة، رحلة آمنة إلى عالم المعرفة
+                    {{ $content->title }}
                 </h1>
-                <h2 class="fade1 text-center font-sec xl:text-3xl text-xl font-normal">
-                    احجز مقعدًا في توصيلة، واكتشف معنى السلامة والراحة واستمتع برحلة آمنة نحو مستقبلك المشرق
-                </h2>
+                <h2 class="fade1 text-center font-sec xl:text-3xl text-xl font-normal">{{ $content->subtitle }} </h2>
                 <div class="fade2 mt-8 flex justify-center gap-12 w-full">
                     <button
                         class="px-4 z-30 py-2 bg-soft_black rounded-md text-white hover:text-soft_black relative font-semibold font-sans after:-z-20 after:absolute after:h-1 after:w-1 after:bg-white after:left-5 overflow-hidden after:bottom-0 after:translate-y-full after:rounded-md after:hover:scale-[300] after:hover:transition-all after:hover:duration-700 after:transition-all after:duration-700 transition-all duration-700  text-2xl">
@@ -35,13 +33,9 @@
             {{-- Left Side --}}
             <div class="w-full flex flex-col justify-center items-center gap-2  xl:mr-0">
 
-                <h1 class="fade w-4/5 text-soft_black font-pr  md:text-5xl text-4xl text-center p-4 ">
-                    توصيلة، رحلة آمنة إلى عالم المعرفة
+                <h1 class="fade w-4/5 text-soft_black font-pr  md:text-5xl text-4xl text-center p-4 ">{{ $content->title }}
                 </h1>
-
-                <h2 class="fade1 w-4/5 text-center font-sec md:text-2xl text-xl ">
-                    احجز مقعدًا في توصيلة، واكتشف معنى السلامة والراحة واستمتع برحلة آمنة نحو مستقبلك المشرق
-                </h2>
+                <h2 class="fade1 w-4/5 text-center font-sec md:text-2xl text-xl ">{{ $content->subtitle }} </h2>
                 <div class="bg-reed-500 w-1/2  flex justify-center">
                     <img class="bus w-[300px] drop-shadow-md" src="./assets/graphics/images/the_bus.png" alt="">
                 </div>
@@ -67,8 +61,7 @@
                 <!-- Title -->
                 <div class=" mx-auto text-center mb-6 md:mb-12">
                     <h2 class="font-sec  text-xl font-semibold md:text-4xl md:leading-tight text-gray-200">
-                        خدمات النقل لازيد من 10 جامعات في الرياض
-                    </h2>
+                        {{ $content->our_university_title }} </h2>
                 </div>
                 <!-- End Title -->
 
@@ -122,7 +115,7 @@
             <div class="relative z-10 lg:grid lg:grid-cols-12 lg:gap-16 lg:items-center ">
                 <div class="mb-10 lg:mb-0 lg:col-span-6 lg:col-start-8 lg:order-2" dir="rtl">
                     <h2 class="text-3xl text-gray-800 font-bold sm:text-4xl font-sec">
-                        إكتشف مختلف خدماتنا ذات الجودة العالية </h2>
+                        {{ $content->our_services }}</h2>
 
                     <!-- Tab Navs -->
                     <nav class="grid gap-4 mt-5 md:mt-10" aria-label="Tabs" role="tablist">
@@ -138,12 +131,9 @@
                                 </svg>
                                 <span class="grow ms-6">
                                     <span
-                                        class="block text-lg hs-tab-active:text-blue-600 text-gray-800  font-pr">تغطية
-                                        شاملة
-                                    </span>
+                                        class="block text-lg hs-tab-active:text-blue-600 text-gray-800  font-pr">{{ $content['1st_service_title'] }}</span>
                                     <span
-                                        class="block text-xl mt-1 text-gray-800   font-sec">تشمل
-                                        خدمات "توصيلة" رحلات لجميع الكليات و الجامعات في مدينة الرياض</span>
+                                        class="block text-xl mt-1 text-gray-800   font-sec">{{ $content['1st_service_text'] }}</span>
                                 </span>
                             </span>
                         </button>
@@ -160,12 +150,10 @@
                                 </svg>
                                 <span class="grow ms-6">
                                     <span
-                                        class="block text-lg font-pr hs-tab-active:text-blue-600 text-gray-800 ">أفضل
-                                        السائقين
+                                        class="block text-lg font-pr hs-tab-active:text-blue-600 text-gray-800 ">{{ $content['2nd_service_title'] }}
                                     </span>
                                     <span
-                                        class="block text-xl font-sec mt-1 text-gray-800  ">رحلات
-                                        يقودها أجود السائقين الذين تم إختيارهم بعناية لضمان أفضل الرحلات</span>
+                                        class="block text-xl font-sec mt-1 text-gray-800  ">{{ $content['2nd_service_text'] }}</span>
                                 </span>
                             </span>
                         </button>
@@ -188,12 +176,10 @@
                                 </svg>
                                 <span class="grow ms-6">
                                     <span
-                                        class="block text-lg font-pr hs-tab-active:text-blue-600 text-gray-800 ">أحدث
-                                        الحافلات
+                                        class="block text-lg font-pr hs-tab-active:text-blue-600 text-gray-800 ">{{ $content['3rd_service_title'] }}
                                     </span>
                                     <span
-                                        class="block font-sec text-xl mt-1 text-gray-800  ">أسطول
-                                        من أحدث الحافلات بمعايير عالمية لضمان الراحة و الامان</span>
+                                        class="block font-sec text-xl mt-1 text-gray-800  ">{{ $content['3rd_service_text'] }}</span>
                                 </span>
                             </span>
                         </button>
@@ -207,8 +193,7 @@
                         <!-- Tab Content -->
                         <div>
                             <div id="tabs-with-card-1" role="tabpanel" aria-labelledby="tabs-with-card-item-1">
-                                <img loading="lazy"
-                                    class="shadow-xl shadow-gray-200 rounded-xl  max-h-[600px] w-full"
+                                <img loading="lazy" class="shadow-xl shadow-gray-200 rounded-xl  max-h-[600px] w-full"
                                     src="./assets/graphics/services_img/universities.jpg" alt="Image Description">
                             </div>
 
@@ -235,8 +220,7 @@
 
             <!-- Background Color -->
             <div class="absolute inset-0 grid grid-cols-12 size-full">
-                <div
-                    class="col-span-full lg:col-span-7 lg:col-start-6 bg-pr w-full h-5/6 rounded-xl sm:h-3/4 lg:h-full ">
+                <div class="col-span-full lg:col-span-7 lg:col-start-6 bg-pr w-full h-5/6 rounded-xl sm:h-3/4 lg:h-full ">
                 </div>
             </div>
             <!-- End Background Color -->
@@ -248,58 +232,52 @@
     <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
         <div
             class="py-3 flex items-center before:flex-[1_1_0%] before:border-t-4 before:border-pr before:me-6 after:flex-[1_1_0%]  after:border-t-4 after:border-pr after:ms-6   mb-16">
-            <h2 class="font-pr text-center text-5xl">ابدأ الآن من خلال 4 خطوات فقط</h2>
+            <h2 class="font-pr text-center text-5xl">{{ $content->steps }}</h2>
         </div>
 
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 items-center gap-12">
             <!-- Icon Block -->
             <div>
                 <div class="bg-pr text-soft_black font-pr text-2xl rounded-lg text-center w-12 h-12 p-2">1</div>
-                <h3 class="text-lg font-semibold text-gray-800  mt-6">أنشئ حسابك
+                <h3 class="text-lg font-semibold text-gray-800  mt-6">{{ $content['1st_step_title'] }}
                 </h3>
                 <div class="bg-gray-300  h-1 mt-3">
                     <div class="bg-pr w-[25%] h-1"></div>
                 </div>
-                <p class="mt-1 text-gray-600 ">قم بإنشاء حسابك بكل سهولة، و كن جزء من مجتمع "توصيلة"
+                <p class="mt-1 text-gray-600 ">{{ $content['1st_step_text'] }}
                 </p>
             </div>
             <!-- End Icon Block -->
             <!-- Icon Block -->
             <div>
                 <div class="bg-pr text-soft_black font-pr text-2xl rounded-lg text-center w-12 h-12 p-2">2</div>
-                <h3 class="text-lg font-semibold text-gray-800  mt-6">تصفح الرحلات
+                <h3 class="text-lg font-semibold text-gray-800  mt-6">{{ $content['2nd_step_title'] }}
                 </h3>
                 <div class="bg-gray-300  h-1 mt-3">
                     <div class="bg-pr w-[50%] h-1"></div>
                 </div>
-                <p class="mt-1 text-gray-600 ">تصفح مجموعة واسعة من الرحلات، بفضل أدواتنا المتطورة في
-                    البحث
-                </p>
+                <p class="mt-1 text-gray-600 ">{{ $content['2nd_step_text'] }}</p>
             </div>
             <!-- End Icon Block -->
             <!-- Icon Block -->
             <div>
                 <div class="bg-pr text-soft_black font-pr text-2xl rounded-lg text-center w-12 h-12 p-2">3</div>
-                <h3 class="text-lg font-semibold text-gray-800  mt-6">إشترك في رحلة
+                <h3 class="text-lg font-semibold text-gray-800  mt-6">{{ $content['3rd_step_title'] }}
                 </h3>
                 <div class="bg-gray-300  h-1 mt-3">
                     <div class="bg-pr w-[75%] h-1"></div>
                 </div>
-                <p class="mt-1 text-gray-600 ">إشترك في الرحلة التي تناسبك، و تحكم في حسابك و إشتراكك
-                    بسلاسة
-                </p>
+                <p class="mt-1 text-gray-600 ">{{ $content['3rd_step_text'] }}</p>
             </div>
             <!-- End Icon Block -->
             <!-- Icon Block -->
             <div>
                 <div class="bg-pr text-soft_black font-pr text-2xl rounded-lg text-center w-12 h-12 p-2">4</div>
-                <h3 class="text-lg font-semibold text-gray-800  mt-6">إستلم تأكيد الإشتراك
-                </h3>
+                <h3 class="text-lg font-semibold text-gray-800  mt-6">{{ $content['4th_step_title'] }}</h3>
                 <div class="bg-gray-300  h-1 mt-3">
                     <div class="bg-pr w-full h-1"></div>
                 </div>
-                <p class="mt-1 text-gray-600 ">أحصل في الحين على تأكيد إشتراكك، و إستفد من خدماتنا ذات
-                    الجودة العالية</p>
+                <p class="mt-1 text-gray-600 ">{{ $content['4th_step_text'] }}</p>
             </div>
             <!-- End Icon Block -->
 
@@ -313,7 +291,7 @@
         <div class="max-w-5xl px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
             <!-- Title -->
             <div class="relative max-w-2xl mx-auto text-center mb-10 lg:mb-14">
-                <h2 class="text-2xl font-bold md:text-4xl md:leading-tight  font-pr">تعرف على طاقم السائقين
+                <h2 class="text-2xl font-bold md:text-4xl md:leading-tight  font-pr">{{ $content->drivers }}
                 </h2>
                 <span
                     class="absolute -bottom-1 left-0 w-full h-1 bg-gradient-to-r from-tawsila-600 via-orange-400 to-pr rounded-full"></span>
@@ -327,11 +305,10 @@
                         src="./assets/graphics/homeDrivers-images/driver_6.jpg" alt="Image Description">
                     <div class="mt-2 sm:mt-4">
                         <h3 class=" text-gray-800  font-sec font-bold text-2xl">
-                            عمر الجدي
+                            {{ $content['driver_1_name'] }}
                         </h3>
                         <p class="text-gray-400 font-pr text-lg">
-                            5 سنوات خبرة
-                        </p>
+                            {{ $content['driver_1_exp'] }} </p>
                     </div>
                 </div>
                 <!-- End Col -->
@@ -340,10 +317,10 @@
                         src="./assets/graphics/homeDrivers-images/driver_5.jpg" alt="Image Description">
                     <div class="mt-2 sm:mt-4">
                         <h3 class=" text-gray-800  font-sec font-bold text-2xl">
-                            حسين الحارثي
+                            {{ $content['driver_2_name'] }}
                         </h3>
                         <p class="text-gray-400 font-pr text-lg">
-                            6 سنوات خبرة
+                            {{ $content['driver_2_exp'] }}
                         </p>
                     </div>
                 </div>
@@ -353,10 +330,10 @@
                         src="./assets/graphics/homeDrivers-images/driver_3.jpg" alt="Image Description">
                     <div class="mt-2 sm:mt-4">
                         <h3 class=" text-gray-800  font-sec font-bold text-2xl">
-                            علي السلمان
+                            {{ $content['driver_3_name'] }}
                         </h3>
                         <p class="text-gray-400 font-pr text-lg">
-                            11 سنوات خبرة
+                            {{ $content['driver_3_exp'] }}
                         </p>
                     </div>
                 </div>
@@ -366,10 +343,10 @@
                         src="./assets/graphics/homeDrivers-images/driver_2.jpg" alt="Image Description">
                     <div class="mt-2 sm:mt-4">
                         <h3 class=" text-gray-800  font-sec font-bold text-2xl">
-                            أحمد العتيبي
+                            {{ $content['driver_4_name'] }}
                         </h3>
                         <p class="text-gray-400 font-pr text-lg">
-                            8 سنوات خبرة
+                            {{ $content['driver_4_exp'] }}
                         </p>
                     </div>
                 </div>
@@ -379,10 +356,10 @@
                         src="./assets/graphics/homeDrivers-images/driver_1.jpg" alt="Image Description">
                     <div class="mt-2 sm:mt-4">
                         <h3 class=" text-gray-800  font-sec font-bold text-2xl">
-                            سلمان الشريف
+                            {{ $content['driver_5_name'] }}
                         </h3>
                         <p class="text-gray-400 font-pr text-lg">
-                            8 سنوات خبرة
+                            {{ $content['driver_5_exp'] }}
                         </p>
                     </div>
                 </div>
@@ -392,10 +369,10 @@
                         src="./assets/graphics/homeDrivers-images/driver_14.jpg" alt="Image Description">
                     <div class="mt-2 sm:mt-4">
                         <h3 class=" text-gray-800  font-sec font-bold text-2xl">
-                            ناصر السهلي
+                            {{ $content['driver_6_name'] }}
                         </h3>
                         <p class="text-gray-400 font-pr text-lg">
-                            8 سنوات خبرة
+                            {{ $content['driver_6_exp'] }}
                         </p>
                     </div>
                 </div>
@@ -405,10 +382,10 @@
                         src="./assets/graphics/homeDrivers-images/driver_7.jpg" alt="Image Description">
                     <div class="mt-2 sm:mt-4">
                         <h3 class=" text-gray-800  font-sec font-bold text-2xl">
-                            عبدالعزيز العقيل
+                            {{ $content['driver_7_name'] }}
                         </h3>
                         <p class="text-gray-400 font-pr text-lg">
-                            13 سنوات خبرة
+                            {{ $content['driver_7_exp'] }}
                         </p>
                     </div>
                 </div>
@@ -418,10 +395,10 @@
                         src="./assets/graphics/homeDrivers-images/driver_8.jpg" alt="Image Description">
                     <div class="mt-2 sm:mt-4">
                         <h3 class=" text-gray-800  font-sec font-bold text-2xl">
-                            محمود الخضيري
+                            {{ $content['driver_8_name'] }}
                         </h3>
                         <p class="text-gray-400 font-pr text-lg">
-                            12 سنوات خبرة
+                            {{ $content['driver_8_exp'] }}
                         </p>
                     </div>
                 </div>
@@ -431,10 +408,10 @@
                         src="./assets/graphics/homeDrivers-images/driver_11.jpg" alt="Image Description">
                     <div class="mt-2 sm:mt-4">
                         <h3 class=" text-gray-800  font-sec font-bold text-2xl">
-                            سعود العنزي
+                            {{ $content['driver_9_name'] }}
                         </h3>
                         <p class="text-gray-400 font-pr text-lg">
-                            9 سنوات خبرة
+                            {{ $content['driver_9_exp'] }}
                         </p>
                     </div>
                 </div>
@@ -444,10 +421,10 @@
                         src="./assets/graphics/homeDrivers-images/driver_15.jpg" alt="Image Description">
                     <div class="mt-2 sm:mt-4">
                         <h3 class=" text-gray-800  font-sec font-bold text-2xl">
-                            خالد الفهد
+                            {{ $content['driver_10_name'] }}
                         </h3>
                         <p class="text-gray-400 font-pr text-lg">
-                            8 سنوات خبرة
+                            {{ $content['driver_10_exp'] }}
                         </p>
                     </div>
                 </div>

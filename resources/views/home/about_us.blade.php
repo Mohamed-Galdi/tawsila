@@ -10,14 +10,8 @@
                     <img class="w-2/3 object-fit h-fit" src="./assets/graphics/images/female_devs.png"
                         alt="A group of People" />
                 </div>
-                <p
-                    class="font-normal font-sec lg:text-2xl text-xl text-justify line leading-loose text-gray-600">
-                    بدأت
-                    قصتنا برؤية بسيطة: تسهيل عملية نقل الطلاب إلى مدارسهم بأمان وسهولة. تجمعنا في فريق واحد، مؤمنات بأهمية
-                    التكنولوجيا في تحسين حياة المجتمع، وبدأنا في بناء منصة "توصيلة" بشغف وإصرار. تطورت الفكرة مع الوقت، وتم
-                    توسيع نطاق الخدمات لتشمل العديد من الميزات المبتكرة التي تجعل تجربة النقل المدرسي أكثر سهولة وسلاسة
-                    للطلاب وأولياء الأمور. هدفنا هو توفير بيئة آمنة وموثوقة للطلاب وتخفيف عبء القلق عن أولياء الأمور، لنساهم
-                    بشكل فعّال في تحقيق تجربة تعليمية مثالية للجميع.</p>
+                <p class="font-normal font-sec lg:text-2xl text-xl text-justify line leading-loose text-gray-600">
+                    {{ $content->our_story }}</p>
             </div>
             <div class="hidden fade3 md:w-1/2 md:flex justify-center">
                 <img class="w-fit object-fit h-fit" src="./assets/graphics/images/female_devs.png"
@@ -29,12 +23,7 @@
             {{-- //////////// Who we are /////////////////// --}}
             <div class="w-full lg:w-5/12 flex flex-col justify-center">
                 <h1 class="text-3xl lg:text-4xl font-bold leading-9 text-gray-800 pb-4 font-pr"> من نحن</h1>
-                <p class="font-sec text-xl  text-justify">
-                    نحن فريق من المطورات العربيات اللاتي يؤمنّ بالقوة الإبداعية للمرأة في مجال تطوير التقنية. قمنا ببناء
-                    منصة
-                    "توصيلة" باستخدام خبراتنا ومهاراتنا في البرمجة وتصميم الواجهات لتكون تجربة فريدة للمستخدمين. نفتخر بأن
-                    نكون
-                    جزءًا من تطوير مشاريع تقنية تلبي احتياجات مجتمعنا.</p>
+                <p class="font-sec text-xl  text-justify">{{ $content->who_we_are }}</p>
             </div>
             {{-- //////////// Team members /////////////////// --}}
             <div class="w-full lg:w-8/12 lg:pt-8">
@@ -42,30 +31,26 @@
                     <div class="p-4 pb-6 flex justify-center flex-col items-center">
                         <img class=" object-cover rounded-lg shadow-lg border-pr border-2"
                             src="./assets/graphics/team/team_dev1.jpg" alt="Alexa featured Image" />
-                        <h3 class="font-pr text-3xl  text-gray-800  ">مريم</h3>
-                        <p class="font-sec text-center text-md font-bold text-gray-800  mt-1">مطورة نضم الخلفية
-                            (backend)</p>
+                        <h3 class="font-pr text-3xl  text-gray-800  ">{{ $content['1st_team_member_name'] }}</h3>
+                        <p class="font-sec text-center text-md font-bold text-gray-800  mt-1">{{ $content['1st_team_member_role'] }}</p>
                     </div>
                     <div class="p-4 pb-6 flex justify-center flex-col items-center">
                         <img class=" object-cover rounded-lg shadow-lg border-pr border-2"
                             src="./assets/graphics/team/team_dev4.jpg" alt="Alexa featured Image" />
-                        <h3 class="font-pr text-3xl  text-gray-800  ">سلمى</h3>
-                        <p class="font-sec text-center text-md font-bold text-gray-800  mt-1">مصممة الجرافيك
-                            (desinger)</p>
+                        <h3 class="font-pr text-3xl  text-gray-800  ">{{ $content['2nd_team_member_name'] }}</h3>
+                        <p class="font-sec text-center text-md font-bold text-gray-800  mt-1">{{ $content['2nd_team_member_role'] }}</p>
                     </div>
                     <div class="p-4 pb-6 flex justify-center flex-col items-center">
                         <img class=" object-cover rounded-lg shadow-lg border-pr border-2"
                             src="./assets/graphics/team/team_dev5.jpg" alt="Alexa featured Image" />
-                        <h3 class="font-pr text-3xl  text-gray-800  ">سارة</h3>
-                        <p class="font-sec text-center text-md  font-bold text-gray-800  mt-1">مطورة النضم الامامية
-                            (frontend)</p>
+                        <h3 class="font-pr text-3xl  text-gray-800  ">{{ $content['3rd_team_member_name'] }}</h3>
+                        <p class="font-sec text-center text-md  font-bold text-gray-800  mt-1">{{ $content['4th_team_member_role'] }}</p>
                     </div>
                     <div class="p-4 pb-6 flex justify-center flex-col items-center">
                         <img class=" object-cover rounded-lg shadow-lg border-pr border-2"
                             src="./assets/graphics/team/team_dev2.jpg" alt="Alexa featured Image" />
-                        <h3 class="font-pr text-3xl  text-gray-800  ">نور</h3>
-                        <p class="font-sec text-center text-md font-bold text-gray-800  mt-1">مصممة قواعد البيانات
-                            (databases)</p>
+                        <h3 class="font-pr text-3xl  text-gray-800  ">{{ $content['4th_team_member_name'] }}</h3>
+                        <p class="font-sec text-center text-md font-bold text-gray-800  mt-1">{{ $content['4th_team_member_role'] }}</p>
                     </div>
 
                 </div>
@@ -79,7 +64,7 @@
             <ul class="flex flex-col">
                 <li class="bg-white my-2 shadow-lg" x-data="accordion(1)">
                     <h2 @click="handleClick()" class="flex flex-row justify-between items-center p-3 cursor-pointer">
-                        <span class="font-pr text-2xl">ما هي منصة "توصيلة"؟</span>
+                        <span class="font-pr text-2xl">{{ $content['1st_FAQs'] }}</span>
                         <svg :class="handleRotate()"
                             class="fill-current text-tawsila-600 h-6 min-w-6 transform transition-transform duration-500"
                             viewBox="0 0 20 20">
@@ -90,16 +75,13 @@
                     </h2>
                     <div x-ref="tab" :style="handleToggle()"
                         class="border-l-8 border-pr overflow-hidden max-h-0 duration-500 transition-all bg-soft_black">
-                        <p class="p-3 text-white font-sec text-xl ">"توصيلة" هي منصة تطبيقات تقنية تهدف إلى تسهيل عملية نقل
-                            الطلاب
-                            إلى ومن
-                            المدرسة بوسائل النقل المدرسية بشكل آمن ومنظم.
+                        <p class="p-3 text-white font-sec text-xl ">{{ $content['1st_answer'] }}
                         </p>
                     </div>
                 </li>
                 <li class="bg-white my-2 shadow-lg" x-data="accordion(2)">
                     <h2 @click="handleClick()" class="flex flex-row justify-between items-center p-3 cursor-pointer">
-                        <span class="font-pr text-2xl">هل يتم تخزين بياناتي الشخصية بشكل آمن على منصة "توصيلة"؟</span>
+                        <span class="font-pr text-2xl">{{ $content['2nd_FAQs'] }}</span>
                         <svg :class="handleRotate()"
                             class="fill-current text-tawsila-600 h-6 min-w-6 transform transition-transform duration-500"
                             viewBox="0 0 20 20">
@@ -110,14 +92,12 @@
                     </h2>
                     <div x-ref="tab" :style="handleToggle()"
                         class="border-l-8 border-pr overflow-hidden max-h-0 duration-500 transition-all bg-soft_black">
-                        <p class="p-3 text-white font-sec text-xl "> نعم، نحرص على سرية وأمان بيانات مستخدمي منصة "توصيلة"
-                            وفقًا لأعلى معايير الحماية والخصوصية
-                        </p>
+                        <p class="p-3 text-white font-sec text-xl ">{{ $content['2nd_answer'] }} </p>
                     </div>
                 </li>
                 <li class="bg-white my-2 shadow-lg" x-data="accordion(3)">
                     <h2 @click="handleClick()" class="flex flex-row justify-between items-center p-3 cursor-pointer">
-                        <span class="font-pr text-2xl">كيف يمكنني الحصول على دعم فني في حالة وجود مشكلة تقنية؟</span>
+                        <span class="font-pr text-2xl">{{ $content['3rd_FAQs'] }}</span>
                         <svg :class="handleRotate()"
                             class="fill-current text-tawsila-600 h-6 min-w-6 transform transition-transform duration-500"
                             viewBox="0 0 20 20">
@@ -128,14 +108,12 @@
                     </h2>
                     <div x-ref="tab" :style="handleToggle()"
                         class="border-l-8 border-pr overflow-hidden max-h-0 duration-500 transition-all bg-soft_black">
-                        <p class="p-3 text-white font-sec text-xl ">يمكنك الاتصال بفريق دعم العملاء لدينا عبر البريد
-                            الإلكتروني أو الهاتف المدرج في تطبيق "توصيلة" للحصول على المساعدة في حالة وجود أي مشكلة تقنية.
-                        </p>
+                        <p class="p-3 text-white font-sec text-xl ">{{ $content['3rd_answer'] }} </p>
                     </div>
                 </li>
                 <li class="bg-white my-2 shadow-lg" x-data="accordion(4)">
                     <h2 @click="handleClick()" class="flex flex-row justify-between items-center p-3 cursor-pointer">
-                        <span class="font-pr text-2xl">ما هي منصة "توصيلة"؟</span>
+                        <span class="font-pr text-2xl">{{ $content['4th_FAQs'] }}</span>
                         <svg :class="handleRotate()"
                             class="fill-current text-tawsila-600 h-6 min-w-6 transform transition-transform duration-500"
                             viewBox="0 0 20 20">
@@ -146,16 +124,12 @@
                     </h2>
                     <div x-ref="tab" :style="handleToggle()"
                         class="border-l-8 border-pr overflow-hidden max-h-0 duration-500 transition-all bg-soft_black">
-                        <p class="p-3 text-white font-sec text-xl ">"توصيلة" هي منصة تطبيقات تقنية تهدف إلى تسهيل عملية نقل
-                            الطلاب
-                            إلى ومن
-                            المدرسة بوسائل النقل المدرسية بشكل آمن ومنظم.
-                        </p>
+                        <p class="p-3 text-white font-sec text-xl ">{{ $content['4th_answer'] }} </p>
                     </div>
                 </li>
                 <li class="bg-white my-2 shadow-lg" x-data="accordion(5)">
                     <h2 @click="handleClick()" class="flex flex-row justify-between items-center p-3 cursor-pointer">
-                        <span class="font-pr text-2xl">هل يتم تخزين بياناتي الشخصية بشكل آمن على منصة "توصيلة"؟</span>
+                        <span class="font-pr text-2xl">{{ $content['5th_FAQs'] }}</span>
                         <svg :class="handleRotate()"
                             class="fill-current text-tawsila-600 h-6 min-w-6 transform transition-transform duration-500"
                             viewBox="0 0 20 20">
@@ -166,14 +140,12 @@
                     </h2>
                     <div x-ref="tab" :style="handleToggle()"
                         class="border-l-8 border-pr overflow-hidden max-h-0 duration-500 transition-all bg-soft_black">
-                        <p class="p-3 text-white font-sec text-xl "> نعم، نحرص على سرية وأمان بيانات مستخدمي منصة "توصيلة"
-                            وفقًا لأعلى معايير الحماية والخصوصية
-                        </p>
+                        <p class="p-3 text-white font-sec text-xl ">{{ $content['5th_answer'] }} </p>
                     </div>
                 </li>
                 <li class="bg-white my-2 shadow-lg" x-data="accordion(6)">
                     <h2 @click="handleClick()" class="flex flex-row justify-between items-center p-3 cursor-pointer">
-                        <span class="font-pr text-2xl">كيف يمكنني الحصول على دعم فني في حالة وجود مشكلة تقنية؟</span>
+                        <span class="font-pr text-2xl">{{ $content['6th_FAQs'] }}</span>
                         <svg :class="handleRotate()"
                             class="fill-current text-tawsila-600 h-6 min-w-6 transform transition-transform duration-500"
                             viewBox="0 0 20 20">
@@ -184,9 +156,7 @@
                     </h2>
                     <div x-ref="tab" :style="handleToggle()"
                         class="border-l-8 border-pr overflow-hidden max-h-0 duration-500 transition-all bg-soft_black">
-                        <p class="p-3 text-white font-sec text-xl ">يمكنك الاتصال بفريق دعم العملاء لدينا عبر البريد
-                            الإلكتروني أو الهاتف المدرج في تطبيق "توصيلة" للحصول على المساعدة في حالة وجود أي مشكلة تقنية.
-                        </p>
+                        <p class="p-3 text-white font-sec text-xl ">{{ $content['6th_answer'] }} </p>
                     </div>
                 </li>
             </ul>
