@@ -40,9 +40,9 @@ class ContactPage extends Page implements HasForms
     {
         return $form
             ->schema([
-                TextInput::make('phone')->label('رقم الهاتف')->maxLength(30),
-                TextInput::make('email')->label('البريد الالكتروني')->maxLength(30),
-                TextInput::make('address')->label('موقع مركزنا ')->maxLength(30),
+                TextInput::make('phone')->label('رقم الهاتف')->maxLength(30)->required(),
+                TextInput::make('email')->label('البريد الالكتروني')->maxLength(30)->required(),
+                TextInput::make('address')->label('موقع مركزنا ')->maxLength(30)->required(),
             ])->columns('3')
             ->statePath('data');
     }

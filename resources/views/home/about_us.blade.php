@@ -7,14 +7,16 @@
                 <h1 class="text-4xl lg:text-6xl font-pr  font-bold leading-9 text-gray-800 text-center pb-4">
                     قصتنا </h1>
                 <div class="md:hidden fade3 md:w-1/2 flex justify-center">
-                    <img class="w-2/3 object-fit h-fit" src="./assets/graphics/images/female_devs.png"
+                    <img class="w-2/3 object-fit h-fit"
+                        src="{{ $content->our_story_image ? asset('storage/' . $content->our_story_image) : asset('./assets/graphics/images/female_devs.png') }}"
                         alt="A group of People" />
                 </div>
                 <p class="font-normal font-sec lg:text-2xl text-xl text-justify line leading-loose text-gray-600">
                     {{ $content->our_story }}</p>
             </div>
             <div class="hidden fade3 md:w-1/2 md:flex justify-center">
-                <img class="w-fit object-fit h-fit" src="./assets/graphics/images/female_devs.png"
+                <img class="w-fit object-fit h-fit"
+                    src="{{ $content->our_story_image ? asset('storage/' . $content->our_story_image) : asset('./assets/graphics/images/female_devs.png') }}"
                     alt="A group of People" />
             </div>
         </div>
@@ -30,27 +32,35 @@
                 <div class="grid md:grid-cols-4 grid-cols-2  lg:gap-4 shadow-lg rounded-md">
                     <div class="p-4 pb-6 flex justify-center flex-col items-center">
                         <img class=" object-cover rounded-lg shadow-lg border-pr border-2"
-                            src="./assets/graphics/team/team_dev1.jpg" alt="Alexa featured Image" />
+                            src="{{ $content['1st_team_member_image'] ? asset('storage/' . $content['1st_team_member_image']) : asset('./assets/graphics/team/team_dev1.jpg') }}"
+                            alt="Alexa featured Image" />
                         <h3 class="font-pr text-3xl  text-gray-800  ">{{ $content['1st_team_member_name'] }}</h3>
-                        <p class="font-sec text-center text-md font-bold text-gray-800  mt-1">{{ $content['1st_team_member_role'] }}</p>
+                        <p class="font-sec text-center text-md font-bold text-gray-800  mt-1">
+                            {{ $content['1st_team_member_role'] }}</p>
                     </div>
                     <div class="p-4 pb-6 flex justify-center flex-col items-center">
                         <img class=" object-cover rounded-lg shadow-lg border-pr border-2"
-                            src="./assets/graphics/team/team_dev4.jpg" alt="Alexa featured Image" />
+                            src="{{ $content['2nd_team_member_image'] ? asset('storage/' . $content['2nd_team_member_image']) : asset('./assets/graphics/team/team_dev4.jpg') }}"
+                            alt="Alexa featured Image" />
                         <h3 class="font-pr text-3xl  text-gray-800  ">{{ $content['2nd_team_member_name'] }}</h3>
-                        <p class="font-sec text-center text-md font-bold text-gray-800  mt-1">{{ $content['2nd_team_member_role'] }}</p>
+                        <p class="font-sec text-center text-md font-bold text-gray-800  mt-1">
+                            {{ $content['2nd_team_member_role'] }}</p>
                     </div>
                     <div class="p-4 pb-6 flex justify-center flex-col items-center">
                         <img class=" object-cover rounded-lg shadow-lg border-pr border-2"
-                            src="./assets/graphics/team/team_dev5.jpg" alt="Alexa featured Image" />
+                            src="{{ $content['3rd_team_member_image'] ? asset('storage/' . $content['3rd_team_member_image']) : asset('./assets/graphics/team/team_dev5.jpg') }}"
+                            alt="Alexa featured Image" />
                         <h3 class="font-pr text-3xl  text-gray-800  ">{{ $content['3rd_team_member_name'] }}</h3>
-                        <p class="font-sec text-center text-md  font-bold text-gray-800  mt-1">{{ $content['4th_team_member_role'] }}</p>
+                        <p class="font-sec text-center text-md  font-bold text-gray-800  mt-1">
+                            {{ $content['4th_team_member_role'] }}</p>
                     </div>
                     <div class="p-4 pb-6 flex justify-center flex-col items-center">
                         <img class=" object-cover rounded-lg shadow-lg border-pr border-2"
-                            src="./assets/graphics/team/team_dev2.jpg" alt="Alexa featured Image" />
+                            src="{{ $content['4th_team_member_image'] ? asset('storage/' . $content['4th_team_member_image']) : asset('./assets/graphics/team/team_dev2.jpg') }}"
+                            alt="Alexa featured Image" />
                         <h3 class="font-pr text-3xl  text-gray-800  ">{{ $content['4th_team_member_name'] }}</h3>
-                        <p class="font-sec text-center text-md font-bold text-gray-800  mt-1">{{ $content['4th_team_member_role'] }}</p>
+                        <p class="font-sec text-center text-md font-bold text-gray-800  mt-1">
+                            {{ $content['4th_team_member_role'] }}</p>
                     </div>
 
                 </div>

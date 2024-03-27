@@ -67,42 +67,58 @@
 
                 <!-- Grid -->
                 <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 gap-3 lg:gap-6">
-                    <div class="p-4  bg-gray-100 rounded-lg">
-                        <img class="h-16 mx-auto " src="./assets/graphics/unv_logos/الجامعة العربية المفتوحة.png"
+                    <div class="p-4 bg-gray-100 rounded-lg">
+                        <img class="h-16 mx-auto"
+                            src="{{ $content->our_university_1 ? asset('storage/' . $content->our_university_1) : asset('./assets/graphics/unv_logos/الجامعة العربية المفتوحة.png') }}"
                             alt="">
                     </div>
-                    <div class="p-4  bg-gray-100 rounded-lg">
-                        <img class="h-16 mx-auto " src="./assets/graphics/unv_logos/جامعة الأميرة نورة بنت عبدالرحمن.png"
+                    <div class="p-4 bg-gray-100 rounded-lg">
+                        <img class="h-16 mx-auto"
+                            src="{{ $content->our_university_2 ? asset('storage/' . $content->our_university_2) : asset('./assets/graphics/unv_logos/جامعة الأميرة نورة بنت عبدالرحمن.png') }}"
                             alt="">
                     </div>
-                    <div class="p-4  bg-gray-100 rounded-lg">
-                        <img class="h-16 mx-auto " src="./assets/graphics/unv_logos/جامعة الملك سعود.png" alt="">
-                    </div>
-                    <div class="p-4  bg-gray-100 rounded-lg">
-                        <img class="h-16 mx-auto " src="./assets/graphics/unv_logos/جامعة الامير سلطان.png" alt="">
-                    </div>
-                    <div class="p-4  bg-gray-100 rounded-lg">
-                        <img class="h-16 mx-auto " src="./assets/graphics/unv_logos/جامعة الفيصل.png" alt="">
-                    </div>
-                    <div class="p-4  bg-gray-100 rounded-lg">
-                        <img class="h-16 mx-auto "
-                            src="./assets/graphics/unv_logos/جامعة الملك سعود بن عبد العزيز للعلوم الصحية.png"
+                    <div class="p-4 bg-gray-100 rounded-lg">
+                        <img class="h-16 mx-auto"
+                            src="{{ $content->our_university_3 ? asset('storage/' . $content->our_university_3) : asset('./assets/graphics/unv_logos/جامعة الملك سعود.png') }}"
                             alt="">
                     </div>
-                    <div class="p-4  bg-gray-100 rounded-lg">
-                        <img class="h-16 mx-auto " src="./assets/graphics/unv_logos/جامعة المعرفة.png" alt="">
+                    <div class="p-4 bg-gray-100 rounded-lg">
+                        <img class="h-16 mx-auto"
+                            src="{{ $content->our_university_4 ? asset('storage/' . $content->our_university_4) : asset('./assets/graphics/unv_logos/جامعة الامير سلطان.png') }}"
+                            alt="">
                     </div>
-                    <div class="p-4  bg-gray-100 rounded-lg">
-                        <img class="h-16 mx-auto " src="./assets/graphics/unv_logos/جامعة دار العلوم.png" alt="">
+                    <div class="p-4 bg-gray-100 rounded-lg">
+                        <img class="h-16 mx-auto"
+                            src="{{ $content->our_university_5 ? asset('storage/' . $content->our_university_5) : asset('./assets/graphics/unv_logos/جامعة الفيصل.png') }}"
+                            alt="">
                     </div>
-                    <div class="p-4  bg-gray-100 rounded-lg">
-                        <img class="h-16 mx-auto " src="./assets/graphics/unv_logos/جامعة رياض العلم.png" alt="">
+                    <div class="p-4 bg-gray-100 rounded-lg">
+                        <img class="h-16 mx-auto"
+                            src="{{ $content->our_university_6 ? asset('storage/' . $content->our_university_6) : asset('./assets/graphics/unv_logos/جامعة الملك سعود بن عبد العزيز للعلوم الصحية.png') }}"
+                            alt="">
                     </div>
-                    <div class="p-4  bg-gray-100 rounded-lg">
-                        <img class="h-16 mx-auto " src="./assets/graphics/unv_logos/كليات الرؤية.png" alt="">
+                    <div class="p-4 bg-gray-100 rounded-lg">
+                        <img class="h-16 mx-auto"
+                            src="{{ $content->our_university_7 ? asset('storage/' . $content->our_university_7) : asset('./assets/graphics/unv_logos/جامعة المعرفة.png') }}"
+                            alt="">
                     </div>
-
+                    <div class="p-4 bg-gray-100 rounded-lg">
+                        <img class="h-16 mx-auto"
+                            src="{{ $content->our_university_8 ? asset('storage/' . $content->our_university_8) : asset('./assets/graphics/unv_logos/جامعة دار العلوم.png') }}"
+                            alt="">
+                    </div>
+                    <div class="p-4 bg-gray-100 rounded-lg">
+                        <img class="h-16 mx-auto"
+                            src="{{ $content->our_university_9 ? asset('storage/' . $content->our_university_9) : asset('./assets/graphics/unv_logos/جامعة رياض العلم.png') }}"
+                            alt="">
+                    </div>
+                    <div class="p-4 bg-gray-100 rounded-lg">
+                        <img class="h-16 mx-auto"
+                            src="{{ $content->our_university_10 ? asset('storage/' . $content->our_university_10) : asset('./assets/graphics/unv_logos/كليات الرؤية.png') }}"
+                            alt="">
+                    </div>
                 </div>
+
                 <!-- End Grid -->
             </div>
             <!-- End Clients -->
@@ -194,21 +210,24 @@
                         <div>
                             <div id="tabs-with-card-1" role="tabpanel" aria-labelledby="tabs-with-card-item-1">
                                 <img loading="lazy" class="shadow-xl shadow-gray-200 rounded-xl  max-h-[600px] w-full"
-                                    src="./assets/graphics/services_img/universities.jpg" alt="Image Description">
+                                    src="{{ $content['1st_service_image'] ? asset('storage/' . $content['1st_service_image']) : asset('./assets/graphics/services_img/universities.jpg') }}"
+                                    alt="Image Description">
                             </div>
 
                             <div id="tabs-with-card-2" class="hidden" role="tabpanel"
                                 aria-labelledby="tabs-with-card-item-2">
                                 <img loading="lazy"
                                     class="object-cover shadow-xl shadow-gray-200 rounded-xl  max-h-[600px] w-full"
-                                    src="./assets/graphics/services_img/drivers.jpg" alt="Image Description">
+                                    src="{{ $content['2nd_service_image'] ? asset('storage/' . $content['2nd_service_image']) : asset('./assets/graphics/services_img/drivers.jpg') }}"
+                                    alt="Image Description">
                             </div>
 
                             <div id="tabs-with-card-3" class="hidden" role="tabpanel"
                                 aria-labelledby="tabs-with-card-item-3">
                                 <img loading="lazy"
                                     class="object-cover shadow-xl shadow-gray-200 rounded-xl  max-h-[600px] w-full"
-                                    src="./assets/graphics/services_img/buses.jpg" alt="Image Description">
+                                    src="{{ $content['3rd_service_image'] ? asset('storage/' . $content['3rd_service_image']) : asset('./assets/graphics/services_img/buses.jpg') }}"
+                                    alt="Image Description">
                             </div>
                         </div>
                         <!-- End Tab Content -->
@@ -302,7 +321,7 @@
             <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 md:gap-12">
                 <div class="text-center">
                     <img loading="lazy" class="rounded-full size-24 mx-auto"
-                        src="./assets/graphics/homeDrivers-images/driver_6.jpg" alt="Image Description">
+                        src="{{ $content->driver_1_image ? asset('storage/' . $content->driver_1_image) : asset('./assets/graphics//homeDrivers-images/driver_6.jpg') }}" alt="Image Description">
                     <div class="mt-2 sm:mt-4">
                         <h3 class=" text-gray-800  font-sec font-bold text-2xl">
                             {{ $content['driver_1_name'] }}
@@ -314,7 +333,7 @@
                 <!-- End Col -->
                 <div class="text-center">
                     <img loading="lazy" class="rounded-full size-24 mx-auto"
-                        src="./assets/graphics/homeDrivers-images/driver_5.jpg" alt="Image Description">
+                        src="{{ $content->driver_2_image ? asset('storage/' . $content->driver_2_image) : asset('./assets/graphics//homeDrivers-images/driver_5.jpg') }}" alt="Image Description">
                     <div class="mt-2 sm:mt-4">
                         <h3 class=" text-gray-800  font-sec font-bold text-2xl">
                             {{ $content['driver_2_name'] }}
@@ -327,7 +346,7 @@
                 <!-- End Col -->
                 <div class="text-center">
                     <img loading="lazy" class="rounded-full size-24 mx-auto"
-                        src="./assets/graphics/homeDrivers-images/driver_3.jpg" alt="Image Description">
+                        src="{{ $content->driver_3_image ? asset('storage/' . $content->driver_3_image) : asset('./assets/graphics//homeDrivers-images/driver_3.jpg') }}" alt="Image Description">
                     <div class="mt-2 sm:mt-4">
                         <h3 class=" text-gray-800  font-sec font-bold text-2xl">
                             {{ $content['driver_3_name'] }}
@@ -340,7 +359,7 @@
                 <!-- End Col -->
                 <div class="text-center">
                     <img loading="lazy" class="rounded-full size-24 mx-auto"
-                        src="./assets/graphics/homeDrivers-images/driver_2.jpg" alt="Image Description">
+                        src="{{ $content->driver_4_image ? asset('storage/' . $content->driver_4_image) : asset('./assets/graphics//homeDrivers-images/driver_2.jpg') }}" alt="Image Description">
                     <div class="mt-2 sm:mt-4">
                         <h3 class=" text-gray-800  font-sec font-bold text-2xl">
                             {{ $content['driver_4_name'] }}
@@ -353,7 +372,7 @@
                 <!-- End Col -->
                 <div class="text-center">
                     <img loading="lazy" class="rounded-full size-24 mx-auto"
-                        src="./assets/graphics/homeDrivers-images/driver_1.jpg" alt="Image Description">
+                        src="{{ $content->driver_5_image ? asset('storage/' . $content->driver_5_image) : asset('./assets/graphics//homeDrivers-images/driver_1.jpg') }}" alt="Image Description">
                     <div class="mt-2 sm:mt-4">
                         <h3 class=" text-gray-800  font-sec font-bold text-2xl">
                             {{ $content['driver_5_name'] }}
@@ -366,7 +385,7 @@
                 <!-- End Col -->
                 <div class="text-center">
                     <img loading="lazy" class="rounded-full size-24 mx-auto"
-                        src="./assets/graphics/homeDrivers-images/driver_14.jpg" alt="Image Description">
+                        src="{{ $content->driver_6_image ? asset('storage/' . $content->driver_6_image) : asset('./assets/graphics//homeDrivers-images/driver_14.jpg') }}" alt="Image Description">
                     <div class="mt-2 sm:mt-4">
                         <h3 class=" text-gray-800  font-sec font-bold text-2xl">
                             {{ $content['driver_6_name'] }}
@@ -379,7 +398,7 @@
                 <!-- End Col -->
                 <div class="text-center">
                     <img loading="lazy" class="rounded-full size-24 mx-auto"
-                        src="./assets/graphics/homeDrivers-images/driver_7.jpg" alt="Image Description">
+                        src="{{ $content->driver_7_image ? asset('storage/' . $content->driver_7_image) : asset('./assets/graphics//homeDrivers-images/driver_7.jpg') }}" alt="Image Description">
                     <div class="mt-2 sm:mt-4">
                         <h3 class=" text-gray-800  font-sec font-bold text-2xl">
                             {{ $content['driver_7_name'] }}
@@ -392,7 +411,7 @@
                 <!-- End Col -->
                 <div class="text-center">
                     <img loading="lazy" class="rounded-full size-24 mx-auto"
-                        src="./assets/graphics/homeDrivers-images/driver_8.jpg" alt="Image Description">
+                        src="{{ $content->driver_8_image ? asset('storage/' . $content->driver_8_image) : asset('./assets/graphics//homeDrivers-images/driver_8.jpg') }}" alt="Image Description">
                     <div class="mt-2 sm:mt-4">
                         <h3 class=" text-gray-800  font-sec font-bold text-2xl">
                             {{ $content['driver_8_name'] }}
@@ -405,7 +424,7 @@
                 <!-- End Col -->
                 <div class="text-center">
                     <img loading="lazy" class="rounded-full size-24 mx-auto"
-                        src="./assets/graphics/homeDrivers-images/driver_11.jpg" alt="Image Description">
+                        src="{{ $content->driver_9_image ? asset('storage/' . $content->driver_9_image) : asset('./assets/graphics//homeDrivers-images/driver_11.jpg') }}" alt="Image Description">
                     <div class="mt-2 sm:mt-4">
                         <h3 class=" text-gray-800  font-sec font-bold text-2xl">
                             {{ $content['driver_9_name'] }}
@@ -418,7 +437,7 @@
                 <!-- End Col -->
                 <div class="text-center">
                     <img loading="lazy" class="rounded-full size-24 mx-auto"
-                        src="./assets/graphics/homeDrivers-images/driver_15.jpg" alt="Image Description">
+                        src="{{ $content->driver_10_image ? asset('storage/' . $content->driver_10_image) : asset('./assets/graphics//homeDrivers-images/driver_15.jpg') }}" alt="Image Description">
                     <div class="mt-2 sm:mt-4">
                         <h3 class=" text-gray-800  font-sec font-bold text-2xl">
                             {{ $content['driver_10_name'] }}
