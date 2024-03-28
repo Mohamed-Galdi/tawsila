@@ -4,7 +4,6 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
-use App\Filament\Pages\HomePage;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -15,7 +14,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $this->call([DemoUsers::class]);
+        $this->call([DemoUsers::class, BusSeeder::class, AreaSeeder::class]);
+
         DB::table('home_pages')->insert([
             'id' => 1
         ]);

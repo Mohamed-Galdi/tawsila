@@ -21,4 +21,8 @@ class Student extends Model
     {
         return $this->hasOne(TripRating::class);
     }
+    public function subscription()
+    {
+        return $this->hasOne(Subscription::class);
+    }
 }

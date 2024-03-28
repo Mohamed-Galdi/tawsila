@@ -33,4 +33,8 @@ class Trip extends Model
     {
         return $this->hasMany(TripRating::class);
     }
+    public function subscriptions()
+    {
+        return $this->hasMany(Subscription::class);
+    }
 }

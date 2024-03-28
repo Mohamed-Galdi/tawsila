@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('image');
             $table->string('total_seats');
             $table->string('available_seats');
-            $table->string('status')->default('available');
+            $table->string('status')->default('متوفر');
             $table->timestamps();
         });
     }

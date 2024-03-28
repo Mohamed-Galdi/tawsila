@@ -36,6 +36,11 @@ class AdminPanelProvider extends PanelProvider
             ->favicon(asset('assets/graphics/logos/favicon.png'))
             ->defaultThemeMode(ThemeMode::Dark)
             ->darkModeBrandLogo('assets/graphics/logos/dark_mode_big_logo.png')
+            ->navigationGroups([
+                'الخدمات',
+                'المستخدمين',
+                'إدارة المحتوى',
+            ])
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->pages([
@@ -44,7 +49,6 @@ class AdminPanelProvider extends PanelProvider
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([
                 Widgets\AccountWidget::class,
-                Widgets\FilamentInfoWidget::class,
             ])
             ->middleware([
                 EncryptCookies::class,
