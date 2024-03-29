@@ -10,6 +10,7 @@ use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Filament\Resources\Components\Tab;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
@@ -23,19 +24,18 @@ class AreaResource extends Resource
     protected static ?string $navigationIcon = 'icon-area';
     protected static ?string $modelLabel = 'منطقة';
     protected static ?string $pluralModelLabel = 'مناطق';
-    
+
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
                 Forms\Components\TextInput::make('name')
                     ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('status')
-                    ->required()
                     ->maxLength(255)
-                    ->default('inactive'),
-                Forms\Components\TextInput::make('coordinates'),
+                    ->label('إسم المنطقة'),
+                Forms\Components\Select::make('status')->label('الحالة')
+                    ->required()
+                    ->options(['مغطاة' => 'مغطاة', 'غير مغطاة' => 'غير مغطاة']),
             ]);
     }
 
@@ -43,25 +43,23 @@ class AreaResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('name')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('status')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('coordinates'),
-                Tables\Columns\TextColumn::make('created_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-                Tables\Columns\TextColumn::make('updated_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
+                Tables\Columns\TextColumn::make('name')->label('إسم المنطقة')->searchable(),
+                Tables\Columns\TextColumn::make('status')->label('الحالة')->searchable()->badge()
+                    ->color(fn (string $state): string => match ($state) {
+                        'مغطاة' => 'success',
+                        'غير مغطاة' => 'danger',
+                    }),
+                Tables\Columns\TextColumn::make('trips')->label('عدد الرحلات')->state(function (Area $record): string {
+                    return $record->trips()->count();
+                }),
+                Tables\Columns\TextColumn::make('created_at')->label('تاريخ الإضافة')->dateTime()->sortable()->since(),
+
             ])
             ->filters([
                 //
             ])
             ->actions([
-                Tables\Actions\ViewAction::make(),
+                // Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make(),
             ])

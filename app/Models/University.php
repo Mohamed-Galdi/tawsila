@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class University extends Model
 {
     use HasFactory;
+    protected $fillable = ['name', 'address', 'image'];
 
     public function trips()
     {

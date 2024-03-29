@@ -71,7 +71,7 @@
                         </div>
                         {{-- register button --}}
                         <div class="w-full flex items-center justify-center cursor-pointer">
-                            <a href="/register"
+                            <a href="/student-register"
                                 class="relative inline-flex items-center justify-start py-3 pl-4 pr-12 overflow-hidden font-semibold shadow text-soft_black transition-all duration-150 ease-in-out rounded hover:pl-10 hover:pr-6 bg-gray-50 dark:bg-gray-700 dark:text-white dark:hover:text-gray-200 dark:shadow-none group">
                                 <span
                                     class="absolute bottom-0 left-0 w-full h-1 transition-all duration-150 ease-in-out bg-soft_black group-hover:h-full"></span>
@@ -167,7 +167,7 @@
                             </div>
                             {{-- mobile register button --}}
                             <div class=" flex items-center justify-center cursor-pointer">
-                                <a href="/register"
+                                <a href="/student-register"
                                     class="relative inline-flex items-center justify-start py-3 pl-4 pr-12 overflow-hidden font-semibold shadow text-soft_black transition-all duration-150 ease-in-out rounded hover:pl-10 hover:pr-6 bg-gray-50 dark:bg-gray-700 dark:text-white dark:hover:text-gray-200 dark:shadow-none group">
                                     <span
                                         class="absolute bottom-0 left-0 w-full h-1 transition-all duration-150 ease-in-out bg-soft_black group-hover:h-full"></span>

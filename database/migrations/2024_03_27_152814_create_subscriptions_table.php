@@ -16,8 +16,8 @@ return new class extends Migration
             $table->foreignId('student_id')->nullable()->constrained()->onDelete('set null')->onUpdate('cascade');
             $table->foreignId('trip_id')->nullable()->constrained()->onDelete('set null')->onUpdate('cascade');
             $table->string('plan');
-            $table->timestamp('start_date');
-            $table->timestamp('end_date');
+            $table->timestamp('start_date')->nullable();
+            $table->timestamp('end_date')->nullable();
             $table->timestamps();
         });
     }
