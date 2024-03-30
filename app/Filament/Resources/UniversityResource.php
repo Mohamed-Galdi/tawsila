@@ -38,8 +38,7 @@ class UniversityResource extends Resource
                 Forms\Components\TextInput::make('address')->label('العنوان')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\FileUpload::make('image')->label('الصورة')
-
+                Forms\Components\FileUpload::make('image')->label('الصورة')->disk('public')->directory('ourUniversities')
                     ->required(),
             ]);
     }

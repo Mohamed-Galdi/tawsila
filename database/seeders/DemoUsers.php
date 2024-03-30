@@ -19,21 +19,21 @@ class DemoUsers extends Seeder
             'password' => '00000000',
             'role' => 'admin'
         ];
-        $Student = [
-            'name' => 'Student',
-            'email' => 'student@demo.com',
-            'password' => '000000',
-            'role' => 'student'
-        ];
-        $Driver = [
-            'name' => 'Driver',
-            'email' => 'driver@demo.com',
-            'password' => '000000',
-            'role' => 'driver'
-        ];
+        // $Student = [
+        //     'name' => 'Student',
+        //     'email' => 'student@demo.com',
+        //     'password' => '000000',
+        //     'role' => 'student'
+        // ];
+        // $Driver = [
+        //     'name' => 'Driver',
+        //     'email' => 'driver@demo.com',
+        //     'password' => '000000',
+        //     'role' => 'driver'
+        // ];
 
         User::create($Admin);
-        User::create($Student);
-        User::create($Driver);
+        // User::create($Student);
+        // User::create($Driver);
     }
 }
