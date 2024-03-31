@@ -61,7 +61,7 @@ class RegistrationController extends Controller
         if ($request->hasFile('image')) {
             $image_name = str_replace(" ", "_", $validated['name']) . '-' . Str::random(10) . '.' . $request->file('image')->extension();
             $image = $request->file('image');
-            $path = $image->storeAs('drivers_images', $image_name, 'public');
+            $path = $image->storeAs('ourDrivers', $image_name, 'public');
             $user->image =  $path;
         }
         $user->save();

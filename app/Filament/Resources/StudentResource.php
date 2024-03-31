@@ -37,7 +37,7 @@ class StudentResource extends Resource
             ->schema([
                 Forms\Components\TextInput::make('name')->required()->label('الإسم'),
                 Forms\Components\TextInput::make('email')->required()->label('البريد الإلكتروني'),
-                FileUpload::make('image')->required()->label('الصورة'),
+                FileUpload::make('image')->required()->label('الصورة')->disk('public')->directory('studentsImages'),
             ]);
     }
 

@@ -9,9 +9,9 @@ class Area extends Model
 {
     use HasFactory;
     protected $fillable = ['name', 'status'];
-    
+
     public function trips()
     {
-        return $this->hasMany(Trip::class);
+        return $this->belongsToMany(Trip::class);
     }
 }

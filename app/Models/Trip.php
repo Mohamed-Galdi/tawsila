@@ -8,10 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Trip extends Model
 {
     use HasFactory;
+    protected $fillable = ['university_id', 'bus_id', 'times_per_day', 'first_going_time', 'first_return_time', 'second_going_time', 'second_return_time'];
 
-    public function area()
+    public function areas()
     {
-        return $this->belongsTo(Area::class);
+        return $this->belongsToMany(Area::class);
     }
     public function university()
     {

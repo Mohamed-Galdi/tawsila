@@ -6,7 +6,11 @@ use App\Filament\Resources\DriverResource\Pages;
 use App\Filament\Resources\DriverResource\RelationManagers;
 use App\Models\User;
 use Filament\Forms;
+use Filament\Forms\Components\Fieldset;
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Group;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\ToggleButtons;
 use Filament\Forms\Form;
 use Filament\Infolists\Components\ImageEntry;
 use Filament\Infolists\Components\Section;
@@ -33,12 +37,43 @@ class DriverResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('name')->required()->label('الإسم'),
-                Forms\Components\TextInput::make('email')->required()->label('البريد الإلكتروني'),
-                Forms\Components\TextInput::make('driver.status')->required()->label('البريد الإلكتروني'),
+                Forms\Components\TextInput::make('name')->required()->label('الإسم')->columnSpan(2),
+                Forms\Components\TextInput::make('email')->required()->label('البريد الإلكتروني')->columnSpan(2),
+                Group::make()->relationship('driver')
+                    ->schema([
+                        TextInput::make('license_number'),
+                    ])->columnSpan(2),
+                Group::make()->relationship('driver')
+                    ->schema([
+                        ToggleButtons::make('status')->label('الحالة')
+                            ->options([
+                                'غير متوفر حاليا' => 'غير متوفر حاليا',
+                                ' مرفوض' => ' مرفوض',
+                                'تم التوثيق' => 'تم التوثيق',
+                                'قيد المراجعة' => 'قيد المراجعة'
+                            ])
+                            ->colors([
+                                'غير متوفر حاليا' => 'warning',
+                                ' مرفوض' => 'danger',
+                                'تم التوثيق' => 'success',
+                                'قيد المراجعة' => 'info'
+                            ])
+                            ->icons([
+                                'غير متوفر حاليا' => 'heroicon-s-pause-circle',
+                                ' مرفوض' => 'heroicon-s-hand-raised',
+                                'تم التوثيق' => 'heroicon-s-check-badge',
+                                'قيد المراجعة' => 'heroicon-s-magnifying-glass-circle'
+                            ])
+                            ->columns(5)
+                    ])->columnSpanFull(),
+                FileUpload::make('image')->required()->label('الصورة')->columnSpan(3)->disk('public')->directory('ourDrivers'),
+                Group::make()->relationship('driver')
+                    ->schema([
+                        FileUpload::make('license_image')->disk('public')->directory('drivers_licenses'),
+                    ])->columnSpan(3),
 
-                FileUpload::make('image')->required()->label('الصورة'),
-            ]);
+
+            ])->columns(6);
     }
 
     public static function table(Table $table): Table

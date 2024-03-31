@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('trips', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('area_id')->nullable()->constrained()->onDelete('set null')->onUpdate('cascade');
             $table->foreignId('university_id')->nullable()->constrained()->onDelete('set null')->onUpdate('cascade');
             $table->foreignId('bus_id')->nullable()->constrained()->onDelete('set null')->onUpdate('cascade');
             $table->integer('times_per_day')->default(1);
