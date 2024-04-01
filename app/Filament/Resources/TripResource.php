@@ -136,10 +136,10 @@ class TripResource extends Resource
                 Tables\Columns\TextColumn::make('first_return_time')->label('عودة الرحلة  الأولى')->state(function (Trip $record): string {
                     return $record->first_return_time ?? 'لا يوجد';
                 }),
-                Tables\Columns\TextColumn::make('second_going_time')->label('إنطلاق الرحلة  الثانية')->toggleable(true)->state(function (Trip $record): string {
+                Tables\Columns\TextColumn::make('second_going_time')->label('إنطلاق الرحلة  الثانية')->toggleable(true)->toggledHiddenByDefault()->state(function (Trip $record): string {
                     return $record->second_going_time ?? 'لا يوجد';
                 }),
-                Tables\Columns\TextColumn::make('second_return_time')->label('عودة الرحلة  الثانية')->toggleable(true)->state(function (Trip $record): string {
+                Tables\Columns\TextColumn::make('second_return_time')->label('عودة الرحلة  الثانية')->toggleable(true)->toggledHiddenByDefault()->state(function (Trip $record): string {
                     return $record->second_return_time ?? 'لا يوجد';
                 }),
 

@@ -44,7 +44,10 @@ class AreaResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('name')->label('إسم المنطقة')->searchable(),
-                Tables\Columns\TextColumn::make('status')->label('الحالة')->searchable()->badge()
+                Tables\Columns\TextColumn::make('statusx')->label('الحالة')->badge()
+                    ->state(function (Area $record): string {
+                        return $record->trips()->count() == 0 ? 'غير مغطاة': 'مغطاة';
+                    })
                     ->color(fn (string $state): string => match ($state) {
                         'مغطاة' => 'success',
                         'غير مغطاة' => 'danger',

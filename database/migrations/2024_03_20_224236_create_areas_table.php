@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('areas', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('status')->default('غير مغطاة');
+            // $table->string('status')->default('غير مغطاة');
             $table->polygon('coordinates')->nullable();
             $table->timestamps();
         });
