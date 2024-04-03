@@ -23,19 +23,40 @@ class ManageStudents extends ManageRecords
     public function getTabs(): array
     {
         return [
-            'الكل' => Tab::make()->badge(User::where('role', 'student')->count()),
+            'الكل' => Tab::make()->badge(Student::all()->count()),
+
             'لديها إشتراك' => Tab::make()
-                ->modifyQueryUsing(fn (Builder $query) => $query->whereHas('student', function ($query) {
-                    $query->whereNotNull('trip_id');
-                }))->badge(
-                    Student::query()->whereNot('trip_id', null)->count()
-                )->badgeColor('success'),
+                ->modifyQueryUsing(function ($query) {
+                    $query->whereHas('student', function ($query) {
+                        $query->whereHas('subscription', function ($query) {
+                            $query->where('status', '1');
+                        });
+                    });
+                })
+                ->badge(function () {
+                    return Student::whereHas('subscription', function ($query) {
+                        $query->where('status', '1');
+                    })->count();
+                })
+
+                ->badgeColor('success'),
+
+
+
             'بدون إشتراك' => Tab::make()
-                ->modifyQueryUsing(fn (Builder $query) => $query->whereHas('student', function ($query) {
-                $query->whereNull('trip_id');
-            }))->badge(
-                    Student::query()->where('trip_id', null)->count()
-                )->badgeColor('danger'),
+                ->modifyQueryUsing(function ($query) {
+                    $query->whereHas('student', function ($query) {
+                        $query->whereDoesntHave('subscription', function ($query) {
+                            $query->where('status', '1');
+                        });
+                    });
+                })
+                ->badge(function () {
+                    return Student::whereDoesntHave('subscription', function ($query) {
+                        $query->where('status', '1');
+                    })->count();
+                })
+                ->badgeColor('danger'),
         ];
     }
 }

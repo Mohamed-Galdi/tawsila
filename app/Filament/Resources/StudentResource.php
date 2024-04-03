@@ -50,7 +50,7 @@ class StudentResource extends Resource
                 Tables\Columns\TextColumn::make('email')->label('البريد الإلكتروني'),
                 Tables\Columns\TextColumn::make('trip_id')->label('الإشتراك')->badge()
                     ->state(function (User $record): string {
-                        return $record->student->trip_id == !null ? 'لديها إشتراك' : 'بدون إشتراك';
+                        return $record->student->subscription ? 'لديها إشتراك' : 'بدون إشتراك';
                     })
                     ->color(fn (string $state): string => match ($state) {
                         'بدون إشتراك' => 'danger',

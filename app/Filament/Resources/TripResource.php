@@ -44,7 +44,7 @@ class TripResource extends Resource
     {
         return $form
             ->schema([
-                Select::make('areas')->Relationship('areas', 'name')->native(false)->multiple()->label('المناطق'),
+                Select::make('areas')->Relationship('areas', 'name')->native(false)->multiple()->label('المناطق')->preload(),
                 Select::make('university_id')->Relationship('university', 'name')->native(false)->label('الجامعة'),
                 Select::make('bus_id')->Relationship('bus', 'number')->native(false)->label('الحافلة'),
                 ToggleButtons::make('times_per_day')

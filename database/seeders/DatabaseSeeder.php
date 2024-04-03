@@ -14,7 +14,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $this->call([DemoUsers::class, BusSeeder::class, AreaSeeder::class, StudentSeeder::class, DriverSeeder::class, UniversitySeeder::class, TripSeeder::class]);
+        $this->call([DemoUsers::class, BusSeeder::class, AreaSeeder::class, StudentSeeder::class, DriverSeeder::class, UniversitySeeder::class, TripSeeder::class, SubscriptionsSeeder::class]);
 
         DB::table('home_pages')->insert([
             'id' => 1

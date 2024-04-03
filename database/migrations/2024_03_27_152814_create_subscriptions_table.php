@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('student_id')->nullable()->constrained()->onDelete('set null')->onUpdate('cascade');
             $table->foreignId('trip_id')->nullable()->constrained()->onDelete('set null')->onUpdate('cascade');
             $table->string('plan');
-            $table->string('status')->default('نشط');
+            $table->string('status')->default('1');
             $table->timestamps();
         });
     }
