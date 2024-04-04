@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\RegistrationController;
+use App\Http\Controllers\TripController;
 use App\Models\AboutPage;
 use App\Models\ContactPage;
 use App\Models\HomePage;
@@ -34,6 +35,10 @@ Route::post('/contact-us', function () {
     Alert::success('تم إستقبال رسالتك، سنرد عليك في أقرب وقت');
     return redirect()->back();
 })->name('contactUs');
+
+/////////////////////// Trips //////////////////////
+Route::get('/trips', [TripController::class, 'index'])->name('trips.index');
+Route::get('/trips/{trip}', [TripController::class, 'show'])->name('trips.show');
 
 /////////////////////// Authentication /////////////////////////
 Route::get('/student-register', function () {

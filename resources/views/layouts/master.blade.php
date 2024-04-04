@@ -47,7 +47,7 @@
                         {{-- login button --}}
                         <div class="w-full flex items-center justify-center cursor-pointer">
                             <div
-                                class="relative inline-flex items-center justify-start py-3 pl-4 pr-12 overflow-hidden font-semibold shadow text-soft_black transition-all duration-150 ease-in-out rounded hover:pl-10 hover:pr-6 bg-gray-50 dark:bg-gray-700 dark:text-white dark:hover:text-gray-200 dark:shadow-none group">
+                                class="relative inline-flex items-center justify-start py-3 pl-4 pr-12 overflow-hidden font-semibold shadow text-soft_black transition-all duration-150 ease-in-out rounded hover:pl-10 hover:pr-6 bg-gray-50 dorkbg-gray-700 dorktext-white dorkhover:text-gray-200 dorkshadow-none group">
                                 <span
                                     class="absolute bottom-0 left-0 w-full h-1 transition-all duration-150 ease-in-out bg-soft_black group-hover:h-full"></span>
                                 <span class="absolute right-0 pr-4 duration-200 ease-out group-hover:translate-x-12">
@@ -66,13 +66,13 @@
                                     </svg>
                                 </span>
                                 <span
-                                    class="relative w-full text-left transition-colors duration-200 ease-in-out group-hover:text-white dark:group-hover:text-gray-200 font-pr">الدخول</span>
+                                    class="relative w-full text-left transition-colors duration-200 ease-in-out group-hover:text-white dorkgroup-hover:text-gray-200 font-pr">الدخول</span>
                             </div>
                         </div>
                         {{-- register button --}}
                         <div class="w-full flex items-center justify-center cursor-pointer">
                             <a href="/student-register"
-                                class="relative inline-flex items-center justify-start py-3 pl-4 pr-12 overflow-hidden font-semibold shadow text-soft_black transition-all duration-150 ease-in-out rounded hover:pl-10 hover:pr-6 bg-gray-50 dark:bg-gray-700 dark:text-white dark:hover:text-gray-200 dark:shadow-none group">
+                                class="relative inline-flex items-center justify-start py-3 pl-4 pr-12 overflow-hidden font-semibold shadow text-soft_black transition-all duration-150 ease-in-out rounded hover:pl-10 hover:pr-6 bg-gray-50 dorkbg-gray-700 dorktext-white dorkhover:text-gray-200 dorkshadow-none group">
                                 <span
                                     class="absolute bottom-0 left-0 w-full h-1 transition-all duration-150 ease-in-out bg-soft_black group-hover:h-full"></span>
                                 <span class="absolute right-0 pr-4 duration-200 ease-out group-hover:translate-x-12">
@@ -91,7 +91,7 @@
                                     </svg>
                                 </span>
                                 <span
-                                    class="relative text-nowrap w-full text-left transition-colors duration-200 ease-in-out group-hover:text-white dark:group-hover:text-gray-200 font-pr">إنشاء
+                                    class="relative text-nowrap w-full text-left transition-colors duration-200 ease-in-out group-hover:text-white dorkgroup-hover:text-gray-200 font-pr">إنشاء
                                     حساب
                                 </span>
                             </a>
@@ -140,7 +140,7 @@
                             {{-- mobile login button --}}
                             <div class=" flex items-center justify-center cursor-pointer">
                                 <a href="/register"
-                                    class="relative inline-flex items-center justify-start py-3 pl-4 pr-12 overflow-hidden font-semibold shadow text-soft_black transition-all duration-150 ease-in-out rounded hover:pl-10 hover:pr-6 bg-gray-50 dark:bg-gray-700 dark:text-white dark:hover:text-gray-200 dark:shadow-none group">
+                                    class="relative inline-flex items-center justify-start py-3 pl-4 pr-12 overflow-hidden font-semibold shadow text-soft_black transition-all duration-150 ease-in-out rounded hover:pl-10 hover:pr-6 bg-gray-50 dorkbg-gray-700 dorktext-white dorkhover:text-gray-200 dorkshadow-none group">
                                     <span
                                         class="absolute bottom-0 left-0 w-full h-1 transition-all duration-150 ease-in-out bg-soft_black group-hover:h-full"></span>
                                     <span
@@ -160,7 +160,7 @@
                                         </svg>
                                     </span>
                                     <span
-                                        class="relative text-nowrap w-full text-left transition-colors duration-200 ease-in-out group-hover:text-white dark:group-hover:text-gray-200 font-pr">إنشاء
+                                        class="relative text-nowrap w-full text-left transition-colors duration-200 ease-in-out group-hover:text-white dorkgroup-hover:text-gray-200 font-pr">إنشاء
                                         حساب
                                     </span>
                                 </a>
@@ -168,7 +168,7 @@
                             {{-- mobile register button --}}
                             <div class=" flex items-center justify-center cursor-pointer">
                                 <a href="/student-register"
-                                    class="relative inline-flex items-center justify-start py-3 pl-4 pr-12 overflow-hidden font-semibold shadow text-soft_black transition-all duration-150 ease-in-out rounded hover:pl-10 hover:pr-6 bg-gray-50 dark:bg-gray-700 dark:text-white dark:hover:text-gray-200 dark:shadow-none group">
+                                    class="relative inline-flex items-center justify-start py-3 pl-4 pr-12 overflow-hidden font-semibold shadow text-soft_black transition-all duration-150 ease-in-out rounded hover:pl-10 hover:pr-6 bg-gray-50 dorkbg-gray-700 dorktext-white dorkhover:text-gray-200 dorkshadow-none group">
                                     <span
                                         class="absolute bottom-0 left-0 w-full h-1 transition-all duration-150 ease-in-out bg-soft_black group-hover:h-full"></span>
                                     <span
@@ -188,7 +188,7 @@
                                         </svg>
                                     </span>
                                     <span
-                                        class="relative text-nowrap w-full text-left transition-colors duration-200 ease-in-out group-hover:text-white dark:group-hover:text-gray-200 font-pr">إنشاء
+                                        class="relative text-nowrap w-full text-left transition-colors duration-200 ease-in-out group-hover:text-white dorkgroup-hover:text-gray-200 font-pr">إنشاء
                                         حساب
                                     </span>
                                 </a>
@@ -215,6 +215,12 @@
                     <li>
                         <a href="{{ url('/') }}"
                             class="hover:underline me-4 md:me-6 {{ Request::is('/') ? 'text-pr ' : 'text-white' }}">الرئيسية
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ url('/trips') }}"
+                            class="hover:underline me-4 md:me-6 {{ Request::is('trips') ? 'text-pr ' : 'text-white' }}">
+                            الرحلات
                         </a>
                     </li>
                     <li>
