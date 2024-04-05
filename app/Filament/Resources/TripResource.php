@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\TripResource\Pages;
 use App\Filament\Resources\TripResource\RelationManagers;
 use App\Models\Bus;
+use App\Models\Driver;
 use App\Models\Trip;
 use Filament\Forms;
 use Filament\Forms\Components\Fieldset;
@@ -46,7 +47,31 @@ class TripResource extends Resource
             ->schema([
                 Select::make('areas')->Relationship('areas', 'name')->native(false)->multiple()->label('المناطق')->preload(),
                 Select::make('university_id')->Relationship('university', 'name')->native(false)->label('الجامعة'),
-                Select::make('bus_id')->Relationship('bus', 'number')->native(false)->label('الحافلة'),
+                Select::make('bus_id')->native(false)->label('الحافلة')->options(Bus::where('status', 'متوفر')->get()->mapWithKeys(function ($bus) {
+                    return [$bus->id => $bus->number];
+                })->toArray()),
+                
+                Select::make('driver_id')->native(false)->label('السائق')
+                    ->options(function (string $operation, ?Trip $record = null) {
+                        if ($operation === 'edit') {
+                            // Include current driver even if they have a trip
+                            return
+                                Driver::where('id', $record->driver->id)
+                                ->orWhere(function ($query) {
+                                    $query->where('status', 'تم التوثيق')
+                                        ->whereDoesntHave('trip');
+                                })
+                                ->get()
+                                ->mapWithKeys(function ($driver) {
+                                    return [$driver->id => $driver->user->name];
+                                })->toArray();
+                        } else {
+                            // Exclude drivers with trips
+                            return Driver::where('status', 'تم التوثيق')->whereDoesntHave('trip')->get()->mapWithKeys(function ($driver) {
+                                return [$driver->id => $driver->user->name];
+                            })->toArray();
+                        }
+                    }),
                 ToggleButtons::make('times_per_day')
                     ->grouped()
                     ->label('عدد الرحلات في اليوم')

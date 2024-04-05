@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('drivers', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained();
-            $table->foreignId('trip_id')->nullable()->constrained()->onDelete('set null')->onUpdate('cascade');
+            // $table->foreignId('trip_id')->nullable()->constrained()->onDelete('set null')->onUpdate('cascade');
             $table->string('license_number');
             $table->string('license_image')->nullable();
             $table->string('status')->default('waiting');

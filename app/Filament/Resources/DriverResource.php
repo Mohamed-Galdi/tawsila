@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\DriverResource\Pages;
 use App\Filament\Resources\DriverResource\RelationManagers;
+use App\Models\Driver;
 use App\Models\User;
 use Filament\Forms;
 use Filament\Forms\Components\Fieldset;
@@ -47,19 +48,16 @@ class DriverResource extends Resource
                     ->schema([
                         ToggleButtons::make('status')->label('الحالة')
                             ->options([
-                                'غير متوفر حاليا' => 'غير متوفر حاليا',
                                 ' مرفوض' => ' مرفوض',
                                 'تم التوثيق' => 'تم التوثيق',
                                 'قيد المراجعة' => 'قيد المراجعة'
                             ])
                             ->colors([
-                                'غير متوفر حاليا' => 'warning',
                                 ' مرفوض' => 'danger',
                                 'تم التوثيق' => 'success',
                                 'قيد المراجعة' => 'info'
                             ])
                             ->icons([
-                                'غير متوفر حاليا' => 'heroicon-s-pause-circle',
                                 ' مرفوض' => 'heroicon-s-hand-raised',
                                 'تم التوثيق' => 'heroicon-s-check-badge',
                                 'قيد المراجعة' => 'heroicon-s-magnifying-glass-circle'
@@ -89,16 +87,19 @@ class DriverResource extends Resource
                     ->color(fn (string $state): string => match ($state) {
                         'قيد المراجعة' => 'info',
                         'تم التوثيق' => 'success',
-                        ' مرفوض' => 'danger',
-                        'غير متوفر حاليا' => 'warning',
+                        'مرفوض' => 'danger',
                     })->icon(
                         fn (string $state): string => match ($state) {
                             'قيد المراجعة' => 'heroicon-s-magnifying-glass-circle',
                             'تم التوثيق' => 'heroicon-s-check-badge',
-                            ' مرفوض' => 'heroicon-s-hand-raised',
-                            'غير متوفر حاليا' => 'heroicon-s-pause-circle',
+                            'مرفوض' => 'heroicon-s-hand-raised',
                         }
                     ),
+                Tables\Columns\TextColumn::make('has_trip')->badge()->state(fn (User $record): string => $record->driver->trip ? 'مربوط برحلة' : 'بدون برحلة')
+                    ->color(fn (string $state): string => match ($state) {
+                        'مربوط برحلة' => 'warning',
+                        'بدون برحلة' => 'gray',
+                    })->label('حالة الرحلة'),
                 Tables\Columns\TextColumn::make('created_at')->label('تاريخ التسجيل')->since(),
             ])
             ->filters([
@@ -136,20 +137,18 @@ class DriverResource extends Resource
             ])->columnSpan(1),
             Section::make([
                 TextEntry::make('name')->label('الإسم')->color('primary'),
-                TextEntry::make('email')->label('البريد الإلكتروني')->color('primary'),
+                // TextEntry::make('email')->label('البريد الإلكتروني')->color('primary'),
                 TextEntry::make('driver.license_number')->label('رقم الرخصة')->color('primary'),
                 TextEntry::make('driver.status')->label('الحالة')->badge()
                     ->color(fn (string $state): string => match ($state) {
                         'قيد المراجعة' => 'info',
                         'تم التوثيق' => 'success',
                         ' مرفوض' => 'danger',
-                        'غير متوفر حاليا' => 'warning',
                     })->icon(
                         fn (string $state): string => match ($state) {
                             'قيد المراجعة' => 'heroicon-s-magnifying-glass-circle',
                             'تم التوثيق' => 'heroicon-s-check-badge',
                             ' مرفوض' => 'heroicon-s-hand-raised',
-                            'غير متوفر حاليا' => 'heroicon-s-pause-circle',
                         }
                     ),
             ])->columns(4),

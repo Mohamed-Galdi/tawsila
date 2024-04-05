@@ -30,7 +30,7 @@ class Students extends ChartWidget
                     ],
                 ],
             ],
-            'labels' => ['تم التوثيق', 'قيد المراجعة'],
+            'labels' => ['لديها إشتراك', 'بدون إشتراك'],
         ];
     }
 

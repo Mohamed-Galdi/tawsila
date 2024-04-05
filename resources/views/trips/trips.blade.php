@@ -121,6 +121,7 @@
                                             </div>
                                         @endforeach
                                     </div>
+                                    <p>{{$trip->id}}</p>
                                 </div>
 
                             </div>
@@ -138,7 +139,7 @@
                                         class="group-hover:opacity-100 group-hover:duration-1000 duration-100 opacity-0 absolute top-2.5 right-6 z-10 text-soft_black">إشترك
                                         الان</span>
                                 </button>
-                                /</a>
+                                </a>
                         </div>
                     </div>
                 @empty

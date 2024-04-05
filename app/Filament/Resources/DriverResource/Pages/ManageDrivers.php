@@ -45,16 +45,7 @@ class ManageDrivers extends ManageRecords
                 }))->badge(
                     Driver::query()->where('status', ' مرفوض')->count()
                 )->badgeColor('danger'),
-           
-            'غير متوفر حاليا' => Tab::make()
-                ->modifyQueryUsing(fn (Builder $query) => $query->whereHas('driver', function ($query) {
-                    $query->where('status', 'غير متوفر حاليا');
-                }))->badge(
-                    Driver::query()->where('status', 'غير متوفر حاليا')->count()
-                )->badgeColor('warning'),
-           
-            
-           
+
         ];
     }
 }

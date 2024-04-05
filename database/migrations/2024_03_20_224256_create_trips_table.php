@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::create('trips', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('university_id')->nullable()->constrained()->onDelete('set null')->onUpdate('cascade');
-            $table->foreignId('bus_id')->nullable()->constrained()->onDelete('set null')->onUpdate('cascade');
+            $table->foreignId('university_id')->nullable()->constrained()->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('bus_id')->nullable()->constrained()->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('driver_id')->nullable()->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->integer('times_per_day')->default(1);
             $table->string('first_going_time')->nullable();
             $table->string('first_return_time')->nullable();

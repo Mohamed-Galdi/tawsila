@@ -25,11 +25,12 @@ class DriverSeeder extends Seeder
                 'role' => 'driver',
                 'image' => 'ourDrivers/driver_' . $i . '.jpg',
             ]);
+            $status = ($i == 2) ? 'مرفوض' : (($i == 4) ? 'قيد المراجعة' :'تم التوثيق');
             Driver::create([
                 'user_id' => $user->id,
                 'license_number' => $faker->numberBetween(111111,999999),
                 'license_image' => 'drivers_licenses/driver_license.png',
-                'status' => $faker->randomElement(['قيد المراجعة', 'تم التوثيق', ' مرفوض', 'غير متوفر حاليا']),
+                'status' => $status,
 
             ]);
         };

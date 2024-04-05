@@ -55,6 +55,11 @@ class BusResource extends Resource
                         'خارج الخدمة' => 'danger',
                         'ممتلئ' => 'info',
                     }),
+                Tables\Columns\TextColumn::make('has_trip')->badge()->state(fn (Bus $record): string => $record->trip ? 'مربوط برحلة' : 'بدون برحلة')
+                    ->color(fn (string $state): string => match ($state) {
+                        'مربوط برحلة' => 'info',
+                        'بدون برحلة' => 'warning',
+                    })->label('حالة الرحلة'),
                 Tables\Columns\TextColumn::make('created_at')->dateTime()->sortable()->label('تاريخ الإضافة')->since(),
 
             ])

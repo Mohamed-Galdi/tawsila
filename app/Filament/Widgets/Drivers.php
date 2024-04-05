@@ -15,7 +15,7 @@ class Drivers extends ChartWidget
             'datasets' => [
                 [
                     'label' => '  ',
-                    'data' => [Driver::where('status', 'تم التوثيق')->count(), Driver::where('status', 'قيد المراجعة')->count(), Driver::where('status', ' مرفوض')->count(),],
+                    'data' => [Driver::where('status', 'تم التوثيق')->count(), Driver::where('status', 'قيد المراجعة')->count(), Driver::where('status', 'مرفوض')->count(),],
                     'backgroundColor' => [
                         '#22c55e',
                         '#0ea5e9',
