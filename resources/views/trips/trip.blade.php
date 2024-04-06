@@ -119,7 +119,10 @@
                     class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full bg-black/70">
                     <div class="relative p-4 w-full max-w-2xl max-h-full">
                         <!-- Modal content -->
-                        <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                        <form id="subscriptionForm" method="post" action="{{ route('subscriptions.store') }}"
+                            class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                            @csrf
+                            <input type="hidden" value="{{ $trip->id }}" name="trip">
                             <!-- Modal header -->
                             <div
                                 class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
@@ -146,37 +149,79 @@
                                         <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400 font-sec">
                                             المرجوا إختيار مدة الحجز.
                                         </p>
-                                        <div>
-                                            <div class="flex items-center">
-                                                <input type="checkbox" id="choose-me" class="hidden peer" />
-                                                <label for="choose-me"
-                                                    class="select-none cursor-pointer flex items-center justify-center rounded-lg border-2 border-gray-200
-            py-3 px-6 font-bold text-gray-700 transition-colors duration-200 ease-in-out peer-checked:bg-gray-200 peer-checked:text-gray-900 peer-checked:border-gray-200">
-                                                    <span>Check me</span>
+
+
+                                        <ul class="flex w-full gap-6 justify-center items-center my-4">
+                                            <li>
+                                                <input type="radio" id="3m" name="plan" value="3m" checked
+                                                    class="hidden peer" required />
+                                                <label for="3m"
+                                                    class="inline-flex font-sec  text-white  bg-soft_black w-full h-full  px-3 py-2 rounded-lg  hover:shadow-2xl hover:bg-gray-700 hover:cursor-pointer peer-checked:bg-pr peer-checked:text-soft_black">
+                                                    <div class="block">
+                                                        <div class="w-full text-lg font-semibold">3 أشهر</div>
+                                                    </div>
                                                 </label>
-                                            </div>
-                                        </div>
+                                            </li>
+                                            <li>
+                                                <input type="radio" id="6m" name="plan" value="6m"
+                                                    class="hidden peer" required />
+                                                <label for="6m"
+                                                    class="inline-flex font-sec  text-white  bg-soft_black w-full h-full  px-3 py-2 rounded-lg  hover:shadow-2xl hover:bg-gray-700 hover:cursor-pointer peer-checked:bg-pr peer-checked:text-soft_black">
+                                                    <div class="block">
+                                                        <div class="w-full text-lg font-semibold">6 أشهر</div>
+                                                    </div>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <input type="radio" id="9m" name="plan" value="9m"
+                                                    class="hidden peer" required />
+                                                <label for="9m"
+                                                    class="inline-flex font-sec  text-white  bg-soft_black w-full h-full  px-3 py-2 rounded-lg  hover:shadow-2xl hover:bg-gray-700 hover:cursor-pointer peer-checked:bg-pr peer-checked:text-soft_black">
+                                                    <div class="block">
+                                                        <div class="w-full text-lg font-semibold">9 أشهر</div>
+                                                    </div>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <input type="radio" id="12m" name="plan" value="12m"
+                                                    class="hidden peer" required />
+                                                <label for="12m"
+                                                    class="inline-flex font-sec  text-white  bg-soft_black w-full h-full  px-3 py-2 rounded-lg  hover:shadow-2xl hover:bg-gray-700 hover:cursor-pointer peer-checked:bg-pr peer-checked:text-soft_black">
+                                                    <div class="block">
+                                                        <div class="w-full text-lg font-semibold">12 أشهر</div>
+                                                    </div>
+                                                </label>
+                                            </li>
+
+                                        </ul>
+
                                     </div>
 
 
                                 </div>
                                 <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                                    The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on
-                                    May 25 and is meant to ensure a common set of data rights in the European Union. It
-                                    requires organizations to notify users as soon as possible of high-risk data breaches
-                                    that could personally affect them.
+                                    بعد تأكيد الحجز يمكنك الدخول لحسابك و تنزيل نسخة من وصل الحجز.
+                                </p>
+                                <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+                                    هذا الإشتراك يصبح ساري المفعول فور القيام بالإشتراك.
+                                </p>
+                                <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+                                    لتغيير خطة الإشتراك او للمزيد من المعلومات يمكنك تصفح حسابك او التواصل مع الدعم.
                                 </p>
                             </div>
                             <!-- Modal footer -->
                             <div
                                 class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
+                                <button id="buttonText" type="submit"
+                                    class="relative py-2 px-6 me-3 text-pr text-base font-bold nded-full overflow-hidden bg-soft_black rounded-lg transition-all duration-400 ease-in-out shadow-md hover:scale-105 hover:text-soft_black hover:shadow-lg active:scale-90 before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-gradient-to-r before:from-tawsila-300 before:to-pr before:transition-all before:duration-500 before:ease-in-out before:z-[-1] before:rounded-lg hover:before:left-0">
+                                    <span id="buttonText">تأكيد</span>
+                                    {{-- <span  class="hidden animate-spin">Loading...</span> --}}
+                                </button>
+                                <span id="spinner" class="loader hidden animate-spin"></span>
                                 <button data-modal-hide="default-modal" type="button"
-                                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">I
-                                    accept</button>
-                                <button data-modal-hide="default-modal" type="button"
-                                    class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Decline</button>
+                                    class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-soft_black focus:z-10 focus:ring-4 focus:ring-gray-100 ">إلغاء</button>
                             </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
 
@@ -294,5 +339,12 @@
                 </div>
             </div>
         </div>
+        <script>
+            document.getElementById('subscriptionForm').addEventListener('submit', function() {
+                // Show spinner and hide text
+                document.getElementById('spinner').classList.remove('hidden');
+                document.getElementById('buttonText').classList.add('hidden');
+            });
+        </script>
     </div>
 @endsection

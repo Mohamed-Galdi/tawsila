@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\RegistrationController;
+use App\Http\Controllers\SubscriptionController;
 use App\Http\Controllers\TripController;
 use App\Models\AboutPage;
 use App\Models\ContactPage;
@@ -38,9 +39,16 @@ Route::post('/contact-us', function () {
 
 /////////////////////// Trips //////////////////////
 Route::get('/trips', [TripController::class, 'index'])->name('trips.index');
-Route::get('/trips/{trip}', [TripController::class, 'show'])->name('trips.show');
+/////////////////////// Subscription //////////////////////
+Route::middleware(['student'])->group(function () {
+    Route::post('/subscriptions', [SubscriptionController::class, 'store'])->name('subscriptions.store');
+    Route::get('/trips/{trip}', [TripController::class, 'show'])->name('trips.show');
+});
 
 /////////////////////// Authentication /////////////////////////
+Route::get('/login-choice', function () {
+    return view('authentication.login_choice');
+})->name('login-choice');
 Route::get('/student-register', function () {
     return view('authentication.student_register');
 });

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Subscription;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class SubscriptionController extends Controller
 {
@@ -28,8 +30,30 @@ class SubscriptionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $studentId = auth()->user()->student->id;
+        if (Subscription::where('student_id', $studentId)->exists()) {
+            Alert::warning('لديك بالفعل إشتراك.');
+            return redirect()->back();
+        }
+
+        $plan = match ($request->plan) {
+            '3m' => '3 أشهر',
+            '6m' => '6 أشهر',
+            '9m' => '9 أشهر',
+            '12m' => '12 أشهر',
+        };
+
+        $subscription = Subscription::create([
+            'student_id' => $studentId,
+            'trip_id' => $request->trip,
+            'plan' => $plan,
+            'status' => 1
+        ]);
+
+        Alert::success('تهانينا، تم حجز الإشتراك بنجاح');
+        return redirect('/');
     }
+
 
     /**
      * Display the specified resource.

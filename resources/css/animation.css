@@ -49,3 +49,49 @@
 .fade3 {
     animation: fade-in-slide-text2 0.5s ease-out;
 }
+
+/* Sub loader button */
+
+.loader {
+        width: 30px;
+        height: 30px;
+        border: 10px solid #FFF;
+        border-radius: 50%;
+        position: relative;
+        margin: 0 18px 0;
+        transform: rotate(45deg);
+        box-sizing: border-box;
+    }
+
+    .loader::before {
+        content: "";
+        position: absolute;
+        box-sizing: border-box;
+        inset: -10px;
+        border-radius: 50%;
+        border: 10px solid #f6dc00;
+        animation: prixClipFix 2s infinite linear;
+    }
+
+    @keyframes prixClipFix {
+        0% {
+            clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0)
+        }
+
+        25% {
+            clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 0, 100% 0, 100% 0)
+        }
+
+        50% {
+            clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%)
+        }
+
+        75% {
+            clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%)
+        }
+
+        100% {
+            clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 0)
+        }
+    }
+
