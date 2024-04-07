@@ -13,6 +13,7 @@
         "vite": "^5.0.0"
     },
     "dependencies": {
+        "autoprefixer": "^10.4.19",
         "flowbite": "^2.3.0"
     }
 }
