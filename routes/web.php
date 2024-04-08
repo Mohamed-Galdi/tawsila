@@ -20,6 +20,7 @@ use RealRashid\SweetAlert\Facades\Alert;
 |
 */
 
+/////////////////////// Home /////////////////////////
 Route::get('/', function () {
     $content = HomePage::first();
     return view('home.home', ['content' => $content]);
@@ -37,14 +38,6 @@ Route::post('/contact-us', function () {
     return redirect()->back();
 })->name('contactUs');
 
-/////////////////////// Trips //////////////////////
-Route::get('/trips', [TripController::class, 'index'])->name('trips.index');
-/////////////////////// Subscription //////////////////////
-Route::middleware(['student'])->group(function () {
-    Route::post('/subscriptions', [SubscriptionController::class, 'store'])->name('subscriptions.store');
-    Route::get('/trips/{trip}', [TripController::class, 'show'])->name('trips.show');
-});
-
 /////////////////////// Authentication /////////////////////////
 Route::get('/login-choice', function () {
     return view('authentication.login_choice');
@@ -57,3 +50,14 @@ Route::get('/driver-register', function () {
 });
 Route::post('/student-register', [RegistrationController::class, 'studentRegister'])->name('studentRegister');
 Route::post('/driver-register', [RegistrationController::class, 'driverRegister'])->name('driverRegister');
+
+/////////////////////// Trips //////////////////////
+Route::get('/trips', [TripController::class, 'index'])->name('trips.index');
+
+/////////////////////// Subscription //////////////////////
+Route::middleware(['student'])->group(function () {
+    Route::post('/subscriptions', [SubscriptionController::class, 'store'])->name('subscriptions.store');
+    Route::get('/trips/{trip}', [TripController::class, 'show'])->name('trips.show');
+});
+
+Route::get('print-subscription/{subscription}', [SubscriptionController::class, 'print'])->name('print-subscription');

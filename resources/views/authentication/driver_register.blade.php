@@ -94,6 +94,43 @@
                                 <div class="text-tawsila-800">{{ $message }}</div>
                             @enderror
                         </div>
+
+                        <div class="flex flex-col gap-2 w-full mt-3">
+                                <div class="relative flex items-center max-w-[11rem]">
+                                    <button type="button" id="increment-button"
+                                        data-input-counter-increment="experience"
+                                        class="bg-gray-100 hover:bg-gray-200 border border-gray-300 rounded-s-lg p-3 h-11 focus:ring-gray-100 dark:focus:ring-gray-700 focus:ring-2 focus:outline-none">
+                                        <svg class="w-3 h-3 text-gray-900 dark:text-white" aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                stroke-width="2" d="M9 1v16M1 9h16" />
+                                        </svg>
+                                    </button>
+                                    <input type="text" id="experience" data-input-counter
+                                        data-input-counter-min="1" data-input-counter-max="20"
+                                        aria-describedby="helper-text-explanation"
+                                        class="bg-gray-50 border-x-0 border-gray-300 h-11 font-medium text-center text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full pb-6 "
+                                        placeholder="" value="1" required />
+                                    <div
+                                        class="absolute bottom-1 start-1/2 -translate-x-1/2 rtl:translate-x-1/2 flex items-center text- text-gray-400 space-x-1 rtl:space-x-reverse">
+                                        
+                                        <span>سنوات خبرة </span>
+                                    </div>
+                                    <button type="button" id="decrement-button"
+                                        data-input-counter-decrement="experience"
+                                        class="bg-gray-100 hover:bg-gray-200 border border-gray-300 rounded-e-lg p-3 h-11 focus:ring-gray-100 dark:focus:ring-gray-700 focus:ring-2 focus:outline-none">
+                                        <svg class="w-3 h-3 text-gray-900 dark:text-white" aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 2">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                stroke-width="2" d="M1 1h16" />
+                                        </svg>
+                                    </button>
+                                    
+                                </div>
+                                {{-- <p id="helper-text-explanation" class="mt-2 text-sm text-gray-500 dark:text-gray-400">
+                                    Please select the number of bedrooms.</p> --}}
+
+                        </div>
                     </div>
                     <button
                         class="bg-pr w-full mt-4 p-2 rounded-lg text-center text-soft_black font-pr hover:shadow-xl hover:cursor-pointer"

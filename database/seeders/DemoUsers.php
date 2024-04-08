@@ -31,7 +31,7 @@ class DemoUsers extends Seeder
             'password' => '000000',
             'role' => 'student',
             'image' => 'ourTeam/team_dev5.jpg',
-            'avatar_url' => './storage/ourTeam/team_dev5.jpg',
+            // 'avatar_url' => './storage/ourTeam/team_dev5.jpg',
             
         ]);
         Student::create(['user_id' => $student->id]);
@@ -43,7 +43,8 @@ class DemoUsers extends Seeder
             'password' => '000000',
             'role' => 'driver',
             'image' => 'ourDrivers/driver_12.jpg',
-            'avatar_url' => './storage/ourDrivers/driver_12.jpg',
+            // 'avatar_url' => './storage/ourDrivers/driver_12.jpg',
+            'experience' => '8'
         ]);
         Driver::create([
             'user_id' => $driver->id,

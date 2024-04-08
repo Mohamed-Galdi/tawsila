@@ -5,7 +5,6 @@ namespace App\Filament\Student\Pages;
 use App\Models\User;
 use Filament\Actions\Action;
 
-use Filament\Forms\Components\Actions\Action as AC;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\TextInput;
@@ -13,18 +12,11 @@ use Filament\Pages\Dashboard as BaseDashboard;
 use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
 use Filament\Forms\Form;
-use Filament\Infolists\Components\ImageEntry;
-use Filament\Infolists\Components\TextEntry;
-use Filament\Infolists\Concerns\InteractsWithInfolists;
-use Filament\Infolists\Contracts\HasInfolists;
-use Filament\Infolists\Infolist;
 use Filament\Notifications\Notification;
 use Illuminate\Support\Facades\Hash;
-use Livewire\Component;
 
-class Dashboard extends BaseDashboard implements HasForms, HasInfolists
+class Dashboard extends BaseDashboard implements HasForms
 {
-    use InteractsWithInfolists;
     use InteractsWithForms;
 
     protected static ?string $navigationIcon = 'heroicon-s-user-circle';
@@ -45,6 +37,7 @@ class Dashboard extends BaseDashboard implements HasForms, HasInfolists
     {
         $this->form->fill(auth()->user()->attributesToArray());
     }
+    
 
     public function form(Form $form): Form
     {
@@ -80,7 +73,6 @@ class Dashboard extends BaseDashboard implements HasForms, HasInfolists
     {
 
         $data = $this->form->getState();
-        $data['avatar_url'] = 'storage/'.$data['image'];
         User::find(auth()->user()->id)->update($data);
 
         Notification::make()

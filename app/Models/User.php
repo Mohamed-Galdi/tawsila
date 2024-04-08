@@ -9,6 +9,8 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Filament\Models\Contracts\FilamentUser;
 use Filament\Panel;
+// use Filament\Models\Contracts\HasAvatar;
+
 
 class User extends Authenticatable implements FilamentUser
 {
@@ -26,6 +28,7 @@ class User extends Authenticatable implements FilamentUser
         'image',
         'avatar_url'
     ];
+
 
     /**
      * The attributes that should be hidden for serialization.
@@ -68,4 +71,9 @@ class User extends Authenticatable implements FilamentUser
 
         return false;
     }
+
+    // public function getFilamentAvatarUrl(): ?string
+    // {
+    //     return $this->avatar_url;
+    // }
 }

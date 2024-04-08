@@ -51,6 +51,7 @@ class RegistrationController extends Controller
             'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
             'license_number' => 'required|string|max:255',
             'license_image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'experience' => 'required|max:255'
         ]);
 
         $user = new User();
@@ -75,6 +76,7 @@ class RegistrationController extends Controller
             $path = $image->storeAs('drivers_licenses', $image_name, 'public');
             $driver->license_image =  $path;
         }
+        $driver->experience = $validated['experience'];
         $driver->save();
         Alert::success('تم إنشاء الحساب بنجاح، قم بالدخول الان');
         return redirect('/');

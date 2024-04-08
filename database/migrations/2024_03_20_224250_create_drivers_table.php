@@ -17,6 +17,7 @@ return new class extends Migration
             // $table->foreignId('trip_id')->nullable()->constrained()->onDelete('set null')->onUpdate('cascade');
             $table->string('license_number');
             $table->string('license_image')->nullable();
+            $table->string('experience')->nullable();
             $table->string('status')->default('waiting');
             $table->timestamps();
         });

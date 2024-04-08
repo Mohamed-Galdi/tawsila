@@ -31,7 +31,7 @@ class DriverSeeder extends Seeder
                 'license_number' => $faker->numberBetween(111111,999999),
                 'license_image' => 'drivers_licenses/driver_license.png',
                 'status' => $status,
-
+                'experience' => rand(5, 12)
             ]);
         };
     }
