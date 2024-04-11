@@ -6,6 +6,7 @@ use App\Http\Controllers\TripController;
 use App\Models\AboutPage;
 use App\Models\ContactPage;
 use App\Models\HomePage;
+use App\Models\Subscription;
 use Illuminate\Support\Facades\Route;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -61,3 +62,8 @@ Route::middleware(['student'])->group(function () {
 });
 
 Route::get('print-subscription/{subscription}', [SubscriptionController::class, 'print'])->name('print-subscription');
+
+Route::get('/confirmation', function(){
+    $subscription = Subscription::first();
+    return view('pdf.confirmation', compact('subscription'));
+});

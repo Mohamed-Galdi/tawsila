@@ -5,6 +5,7 @@ namespace App\Filament\Student\Pages;
 use App\Models\Subscription;
 use Filament\Pages\Page;
 use Filament\Actions\Action;
+use Filament\Actions\EditAction;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\TextInput;
@@ -111,20 +112,26 @@ class sttudent_subscription extends Page implements HasForms, HasInfolists
                             ->color('warning')
                             ->requiresConfirmation(),
                         // ->action('expirePassword'),
+                        // EditAction::make()->record(Subscription::find($subscription->id))
+                        //     ->form([
+                        //         ToggleButtons::make('plan'),
+                        //     ]),
                         ActionsAction::make('edit plan')->label('تغيير مدة الإشتراك')
                             ->icon('heroicon-m-pencil-square')
                             ->color('info')
                             ->modalDescription('Modified description')
                             ->requiresConfirmation()
+                            ->record(Subscription::find($subscription->id))
                             ->form([
-                                ToggleButtons::make('subject')->required()->options(['1', '2', '3']),
-                            ]),
-                        // ->action('expirePassword'),
+                                ToggleButtons::make('plan'),
+                            ])
+                            ->action(),
 
                         ActionsAction::make('print sub')->label('طبع وصل الإشتراك')
                             ->icon('heroicon-m-printer')
                             ->color('success')
-                            ->url(fn (): string => route('print-subscription', ['subscription' => $subscription->id])),
+                            ->url(fn (): string => route('print-subscription', ['subscription' => $subscription->id]))
+                            ->openUrlInNewTab(),
                     ])->columnSpan(3)->columns(3)->alignEnd()->label('الإجراءات'),
                 ])->columnSpanFull()->columns(5),
                 ComponentsSection::make('الحافلة')->schema([

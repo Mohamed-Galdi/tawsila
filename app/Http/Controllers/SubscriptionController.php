@@ -4,10 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Subscription;
 use Illuminate\Http\Request;
-use Spatie\LaravelPdf\Facades\Pdf;
-use function Spatie\LaravelPdf\Support\pdf;
 use RealRashid\SweetAlert\Facades\Alert;
-use Spatie\Browsershot\Browsershot;
 
 class SubscriptionController extends Controller
 {
@@ -16,17 +13,9 @@ class SubscriptionController extends Controller
      */
     public function print(Subscription $subscription)
     {
-        Browsershot::html('Foo')
-        ->setNodeBinary('/usr/local/bin/node')
-        ->setNpmBinary('/usr/local/bin/npm');
         
-        Pdf::view('subscription.subscriptionPDF', ['subscription' => $subscription])
-            ->format('a4')
-            ->save('./pdfs/invoice.pdf');
-        // return pdf('pd', [
-        //     'invoiceNumber' => '1234',
-        //     'customerName' => 'Grumpy Cat',
-        // ]);
+        return view('pdf.confirmation', compact('subscription'));
+        
     }
 
     /**
