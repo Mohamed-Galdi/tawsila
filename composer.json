@@ -12,7 +12,8 @@
         "laravel/framework": "^10.10",
         "laravel/sanctum": "^3.3",
         "laravel/tinker": "^2.8",
-        "realrashid/sweet-alert": "^7.1"
+        "realrashid/sweet-alert": "^7.1",
+        "yepsua/filament-rating-field": "^0.3.0"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.12",

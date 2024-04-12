@@ -44,13 +44,13 @@ class DemoUsers extends Seeder
             'role' => 'driver',
             'image' => 'ourDrivers/driver_12.jpg',
             // 'avatar_url' => './storage/ourDrivers/driver_12.jpg',
-            'experience' => '8'
         ]);
         Driver::create([
             'user_id' => $driver->id,
             'license_number' => '111111',
             'license_image' => 'drivers_licenses/driver_license.png',
             'status' => 'تم التوثيق',
+            'experience' => '8'
 
         ]);
     }

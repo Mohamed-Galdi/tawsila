@@ -11,14 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('trip_rating', function (Blueprint $table) {
+        Schema::create('trip_ratings', function (Blueprint $table) {
             $table->id();
             $table->foreignId('trip_id')->nullable()->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->foreignId('student_id')->nullable()->constrained()->onDelete('cascade')->onUpdate('cascade');
-            $table->integer('bus_rate')->nullable();
-            $table->string('bus_rate_description')->nullable();
-            $table->integer('driver_rate')->nullable();
-            $table->string('driver_rate_description')->nullable();
+            $table->integer('rate')->nullable();
+            $table->string('description')->nullable();
             $table->timestamps();
         });
     }
@@ -28,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     { 
-        Schema::dropIfExists('trip_rating');
+        Schema::dropIfExists('trip_ratings');
     }
 };

@@ -12,6 +12,8 @@ use Filament\Pages\Dashboard as BaseDashboard;
 use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
 use Filament\Forms\Form;
+use Filament\Infolists\Components\TextEntry;
+use Filament\Infolists\Infolist;
 use Filament\Notifications\Notification;
 use Illuminate\Support\Facades\Hash;
 
@@ -37,7 +39,7 @@ class Dashboard extends BaseDashboard implements HasForms
     {
         $this->form->fill(auth()->user()->attributesToArray());
     }
-    
+
 
     public function form(Form $form): Form
     {
@@ -68,6 +70,18 @@ class Dashboard extends BaseDashboard implements HasForms
                 ->submit('update'),
         ];
     }
+    public function infolist(Infolist $infolist): Infolist
+    {
+        return  $infolist->state(['null' => 'null'])
+            ->schema([
+                TextEntry::make('no sub')->hiddenLabel()->state(function () {
+                    if (!auth()->user()->student->subscription()->exists()) {
+                        return 'لا يوجد لديك إشتراك !!! قم بالإشتراك في رحلة، للحصول على صلاحيات تصفح الإشتراك';
+                    }
+                })->color('danger')
+            ]);
+    }
+
 
     public function save()
     {
@@ -80,5 +94,11 @@ class Dashboard extends BaseDashboard implements HasForms
             ->title(__('filament-panels::resources/pages/edit-record.notifications.saved.title'))
             ->send();
         return redirect('/student');
+    }
+    protected function getActions(): array
+    {
+        return [
+            Action::make('الصفحة الرئيسية')->url('/')->icon('heroicon-s-home')->color('gray')->label('الصفحة الرئيسية'),
+        ];
     }
 };
