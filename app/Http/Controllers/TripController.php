@@ -10,6 +10,15 @@ use Illuminate\Http\Request;
 class TripController extends Controller
 {
     /**
+     * print the trip confirmation for drivers
+     */
+    public function print(Trip $trip)
+    {
+
+        return view('pdf.trip_confirmation', compact('trip'));
+    }
+
+    /**
      * Display a listing of the resource.
      */
     public function index(Request $request)

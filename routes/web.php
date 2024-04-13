@@ -62,6 +62,7 @@ Route::middleware(['student'])->group(function () {
 });
 
 Route::get('print-subscription/{subscription}', [SubscriptionController::class, 'print'])->name('print-subscription');
+Route::get('print-trip/{trip}', [TripController::class, 'print'])->name('print-trip');
 
 Route::get('/confirmation', function(){
     $subscription = Subscription::first();

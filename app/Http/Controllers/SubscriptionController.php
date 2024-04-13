@@ -14,7 +14,7 @@ class SubscriptionController extends Controller
     public function print(Subscription $subscription)
     {
         
-        return view('pdf.confirmation', compact('subscription'));
+        return view('pdf.sub_confirmation', compact('subscription'));
         
     }
 
