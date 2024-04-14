@@ -58,6 +58,10 @@ class User extends Authenticatable implements FilamentUser
     {
         return $this->hasOne(Driver::class);
     }
+    public function messages()
+    {
+        return $this->hasMany(UserMessage::class);
+    }
 
     public function canAccessPanel(Panel $panel): bool
     {

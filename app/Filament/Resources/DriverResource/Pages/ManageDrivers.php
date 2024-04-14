@@ -6,6 +6,7 @@ use App\Filament\Resources\DriverResource;
 use App\Models\Driver;
 use App\Models\User;
 use Filament\Actions;
+use Filament\Actions\Action;
 use Filament\Resources\Pages\ManageRecords;
 
 use Filament\Resources\Components\Tab;
@@ -15,12 +16,12 @@ class ManageDrivers extends ManageRecords
 {
     protected static string $resource = DriverResource::class;
 
-    // protected function getHeaderActions(): array
-    // {
-    //     return [
-    //         Actions\CreateAction::make(),
-    //     ];
-    // }
+    protected function getHeaderActions(): array
+    {
+        return [
+            Action::make('الصفحة الرئيسية')->url('/')->icon('heroicon-s-home')->color('gray')->label('الصفحة الرئيسية'),
+        ];
+    }
     public function getTabs(): array
     {
         return [

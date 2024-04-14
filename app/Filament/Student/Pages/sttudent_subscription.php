@@ -75,6 +75,7 @@ class sttudent_subscription extends Page implements HasForms, HasInfolists
                 'driver_image' => $subscription->trip->driver->user->image,
                 // sub university
                 'university_name' => $subscription->trip->university->name,
+                'university_address' => $subscription->trip->university->address,
                 'university_image' => $subscription->trip->university->image,
                 // trip times
                 'times_per_day' => $subscription->trip->times_per_day == '1' ? 'مرة في اليوم' : 'مرتان في اليوم',
@@ -196,6 +197,7 @@ class sttudent_subscription extends Page implements HasForms, HasInfolists
                         ])->columnSpan(1)->columns(3),
                         ComponentsSection::make('الجامعة')->schema([
                             TextEntry::make('university_name')->hiddenLabel(),
+                            TextEntry::make('university_address')->hiddenLabel(),
                             ImageEntry::make('university_image')->hiddenLabel()->width(200),
                         ])->columnSpan(1),
                     ])->columnSpan(1)->columns(1),

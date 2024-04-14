@@ -46,37 +46,48 @@
                 <div class="w-4/5 rounded-xl h-1 bg-pr "></div>
                 {{-- //////////////////////////// Contact Form //////////////////////////// --}}
                 <div class="md:w-2/3 w-full flex justify-center items-center">
-                    <form class="w-full px-8 mx-auto" method="POST" action="{{ route('contactUs') }}">
+                    <form class="w-full px-8 mx-auto" method="POST" action="{{ route('contactUs') }}" id="contactForm">
                         @csrf
                         <div class="mb-5">
                             <label for="name" class="block mb-2 text-lg text-gray-900 font-sec font-bold">الإسم</label>
-                            <input type="text" id="name"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  block w-full p-2.5 "
+                            <input type="text" id="name" name="name"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
                                 required />
                         </div>
                         <div class="mb-5">
                             <label for="email" class="block mb-2 text-lg font-sec font-bold text-gray-900 ">بريدك
                                 الإلكتروني</label>
-                            <input type="email" id="email"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg   block w-full p-2.5 "
+                            <input type="email" id="email" name="email"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
                                 required />
                         </div>
                         <div class="mb-5">
                             <label for="message"
                                 class="block mb-2 text-lg font-sec font-bold text-gray-900 ">رسالتك</label>
                             <textarea name="message" id="message" rows="3"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg   block w-full p-2.5 " required></textarea>
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5" required></textarea>
                         </div>
-                        <button
-                            class="bg-soft_black w-full text-white font-pr py-2 rounded-xl text-center hover:text-pr ">إرسال</button>
+                        <button type="submit"
+                            class="bg-soft_black w-full text-white font-pr py-2 rounded-xl text-center hover:text-pr">
+                            <span id="sendBtn">إرسال</span>
+                            <span id="spinner" class="loader hidden w-2"></span>
+                        </button>
+
                     </form>
+
 
                 </div>
 
             </div>
 
         </div>
-
+        <script>
+            document.getElementById('contactForm').addEventListener('submit', function() {
+                // Show spinner and hide text
+                document.getElementById('spinner').classList.remove('hidden');
+                document.getElementById('sendBtn').classList.add('hidden');
+            });
+        </script>
 
 
     </div>

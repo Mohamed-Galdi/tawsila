@@ -6,6 +6,7 @@ use App\Filament\Resources\AreaResource;
 use App\Models\Area;
 use App\Models\Bus;
 use Filament\Actions;
+use Filament\Actions\Action;
 use Filament\Resources\Components\Tab;
 use Filament\Resources\Pages\ManageRecords;
 use Illuminate\Database\Eloquent\Builder;
@@ -18,6 +19,8 @@ class ManageAreas extends ManageRecords
     {
         return [
             Actions\CreateAction::make(),
+            Action::make('الصفحة الرئيسية')->url('/')->icon('heroicon-s-home')->color('gray')->label('الصفحة الرئيسية'),
+
         ];
     }
     public function getTabs(): array

@@ -41,7 +41,7 @@
             <div
                 class="bg-gray-100 w-1/2 rounded-xl border-2 border-pr p-4 flex flex-col   justify-center items-start gap-3">
                 <p class=" font-sec font-semibold text-3xl">{{ $trip->university->name }}</p>
-                <p class=" font-sec font-semibold text-xl">{{ $trip->university->address }}</p>
+                <p class=" font-sec text-xl">{{ $trip->university->address }}</p>
                 <img src="{{ '../storage/' . $trip->university->image }}" alt="university image" class="w-24 ">
             </div>
         </div>

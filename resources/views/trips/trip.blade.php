@@ -4,16 +4,17 @@
         <div class="p-6  max-w-5xl mx-auto mt-8 ">
             {{-- //////////// Trip Details//////////// --}}
             <div class="flex gap-10 md:flex-row flex-col">
-                <div class="lg:w-full md:w-1/3 w-full">
+                <div class="md:w-1/2 w-full">
                     <img src="{{ asset('storage/' . $trip->bus->image) }}" alt="trip bus"
                         class=" w-full h-full rounded-xl object-cover object-top" />
                 </div>
-                <div>
+                <div class="md:w-1/2 w-full">
                     <div class="flex flex-wrap items-start gap-2">
                         <div>
                             <p class="text-3xl">
                                 <span class="font-sec">رحلة الى: </span>
                                 <span class="font-pr">{{ $trip->university->name }}</span>
+                                <span class="text-base font-sec">( {{ $trip->university->address }} )</span>
                             </p>
                         </div>
                     </div>
@@ -65,7 +66,7 @@
                                         <p>{{ $trip->first_return_time }}</p>
                                     </div>
                                 @endif
-                                @if (isset($trip->first_going_time))
+                                @if (isset($trip->second_going_time))
                                     <div class="w-1 rounded-md bg-pr"></div>
                                 @endif
                                 @if (isset($trip->second_going_time))

@@ -38,8 +38,9 @@
                 </div>
             </div>
             <div
-                class="bg-gray-100 w-1/2 rounded-xl border-2 border-pr p-4 flex flex-col   justify-start items-center gap-3">
+                class="bg-gray-100 w-1/2 rounded-xl border-2 border-pr p-4 flex flex-col   justify-start items-start gap-3">
                 <p class=" font-sec font-semibold text-3xl">{{ $subscription->trip->university->name }}</p>
+                <p class=" font-sec text-xl">({{ $subscription->trip->university->address }})</p>
                 <img src="{{ '../storage/' . $subscription->trip->university->image }}" alt="university image"
                     class="w-24 ">
             </div>
@@ -155,7 +156,12 @@
         // Function to print the page
         function printPage() {
             window.print(); // Print the page
-
+            
+            // Close the window after printing or cancelling
+            setTimeout(function() {
+                window.close(); // Close the window
+            }, 1000); // Adjust the delay as needed (milliseconds)
+            
             // After a short delay to allow the page to render, convert it to PDF
             setTimeout(function() {
                 const pdf = new jsPDF(); // Create a new jsPDF instance

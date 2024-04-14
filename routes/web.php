@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\GuestMessageController;
 use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\SubscriptionController;
 use App\Http\Controllers\TripController;
@@ -34,10 +35,7 @@ Route::get('/contact-us', function () {
     $content = ContactPage::first();
     return view('home.contact_us', ['content' => $content]);
 });
-Route::post('/contact-us', function () {
-    Alert::success('تم إستقبال رسالتك، سنرد عليك في أقرب وقت');
-    return redirect()->back();
-})->name('contactUs');
+Route::post('/contact-us', [GuestMessageController::class, 'store'])->name('contactUs');
 
 /////////////////////// Authentication /////////////////////////
 Route::get('/login-choice', function () {

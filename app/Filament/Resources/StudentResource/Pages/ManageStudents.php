@@ -6,6 +6,7 @@ use App\Filament\Resources\StudentResource;
 use App\Models\Student;
 use App\Models\User;
 use Filament\Actions;
+use Filament\Actions\Action;
 use Filament\Resources\Pages\ManageRecords;
 use Filament\Resources\Components\Tab;
 use Illuminate\Database\Eloquent\Builder;
@@ -14,12 +15,12 @@ class ManageStudents extends ManageRecords
 {
     protected static string $resource = StudentResource::class;
 
-    // protected function getHeaderActions(): array
-    // {
-    //     return [
-    //         Actions\CreateAction::make(),
-    //     ];
-    // }
+    protected function getHeaderActions(): array
+    {
+        return [
+            Action::make('الصفحة الرئيسية')->url('/')->icon('heroicon-s-home')->color('gray')->label('الصفحة الرئيسية'),
+        ];
+    }
     public function getTabs(): array
     {
         return [
