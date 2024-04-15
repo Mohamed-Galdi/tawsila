@@ -4,5 +4,8 @@
 !public/ourDrivers
 !public/ourServices
 !public/ourUniversities
+!public/busImages
+!drivers_licenses
+!studentsImages
 !.gitignore
 
