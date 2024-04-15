@@ -29,7 +29,7 @@ The Tawsila project is organized into the following main pages:
 
 - **Home:** The landing page showcasing the vision and features of the Tawsila platform.
 
-- **Tips:** Enables students to browse and subscribe to specific trips.
+- **Trips:** Enables students to browse and subscribe to specific trips.
 
 - **About Us:** Information about the project's mission, objectives, and the team behind its development.
 

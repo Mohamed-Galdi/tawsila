@@ -28,7 +28,7 @@ class RegistrationController extends Controller
         if ($request->hasFile('image')) {
             $image_name = str_replace(" ", "_", $validated['name']) . '-' . Str::random(10) . '.' . $request->file('image')->extension();
             $image = $request->file('image');
-            $path = $image->storeAs('student_images', $image_name, 'public');
+            $path = $image->storeAs('studentsImages', $image_name, 'public');
             $user->image =  $path;
         }
         $user->save();
@@ -39,7 +39,7 @@ class RegistrationController extends Controller
 
         Alert::success('تم إنشاء الحساب بنجاح، قم بالدخول الان');
 
-        return redirect('/');
+        return redirect('/login-choice');
     }
 
     public function driverRegister(Request $request)
@@ -79,6 +79,6 @@ class RegistrationController extends Controller
         $driver->experience = $validated['experience'];
         $driver->save();
         Alert::success('تم إنشاء الحساب بنجاح، قم بالدخول الان');
-        return redirect('/');
+        return redirect('/login-choice');
     }
 }

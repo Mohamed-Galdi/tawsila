@@ -70,7 +70,7 @@ class UserMessageResource extends Resource
             ])
             ->filters([
                 //
-            ])
+            ])->defaultSort('created_at', 'desc')
             ->actions([
                 Tables\Actions\EditAction::make()->label('رد')->color('info')->modalSubmitActionLabel('إرسال الرد')
                     ->mutateFormDataUsing(function (array $data): array {

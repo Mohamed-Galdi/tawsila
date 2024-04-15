@@ -106,7 +106,7 @@
                                                 stroke-width="2" d="M9 1v16M1 9h16" />
                                         </svg>
                                     </button>
-                                    <input type="text" id="experience" data-input-counter
+                                    <input type="text" id="experience" data-input-counter name="experience"
                                         data-input-counter-min="1" data-input-counter-max="20"
                                         aria-describedby="helper-text-explanation"
                                         class="bg-gray-50 border-x-0 border-gray-300 h-11 font-medium text-center text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full pb-6 "

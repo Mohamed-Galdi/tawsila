@@ -10,14 +10,18 @@
                 </h1>
                 <h2 class="fade1 text-center font-sec xl:text-3xl text-xl font-normal">{{ $content->subtitle }} </h2>
                 <div class="fade2 mt-8 flex justify-center gap-12 w-full">
-                    <button
-                        class="px-4 z-30 py-2 bg-soft_black rounded-md text-white hover:text-soft_black relative font-semibold font-sans after:-z-20 after:absolute after:h-1 after:w-1 after:bg-white after:left-5 overflow-hidden after:bottom-0 after:translate-y-full after:rounded-md after:hover:scale-[300] after:hover:transition-all after:hover:duration-700 after:transition-all after:duration-700 transition-all duration-700  text-2xl">
-                        إشترك الان
-                    </button>
-                    <button
-                        class="px-4 z-30 py-2 bg-white rounded-md text-soft_black hover:text-white relative font-semibold font-sans after:-z-20 after:absolute after:h-1 after:w-1 after:bg-soft_black after:left-5 overflow-hidden after:bottom-0 after:translate-y-full after:rounded-md after:hover:scale-[300] after:hover:transition-all after:hover:duration-700 after:transition-all after:duration-700 transition-all duration-700  text-2xl">
-                        تصفح الرحلات
-                    </button>
+                    <a href="/student-register">
+                        <button
+                            class="px-4 z-30 py-2 bg-soft_black rounded-md text-white hover:text-soft_black relative font-semibold font-sans after:-z-20 after:absolute after:h-1 after:w-1 after:bg-white after:left-5 overflow-hidden after:bottom-0 after:translate-y-full after:rounded-md after:hover:scale-[300] after:hover:transition-all after:hover:duration-700 after:transition-all after:duration-700 transition-all duration-700  text-2xl">
+                            إشترك الان
+                        </button>
+                    </a>
+                    <a href="/trips">
+                        <button
+                            class="px-4 z-30 py-2 bg-white rounded-md text-soft_black hover:text-white relative font-semibold font-sans after:-z-20 after:absolute after:h-1 after:w-1 after:bg-soft_black after:left-5 overflow-hidden after:bottom-0 after:translate-y-full after:rounded-md after:hover:scale-[300] after:hover:transition-all after:hover:duration-700 after:transition-all after:duration-700 transition-all duration-700  text-2xl">
+                            تصفح الرحلات
+                        </button>
+                    </a>
                 </div>
             </div>
             {{-- Right Side --}}
@@ -40,14 +44,18 @@
                     <img class="bus w-[300px] drop-shadow-md" src="./assets/graphics/images/the_bus.png" alt="">
                 </div>
                 <div class="fade2 flex flex-col justify-center gap-2 w-4/5">
-                    <button
-                        class="px-4 z-30 py-2 bg-soft_black rounded-md text-white hover:text-soft_black relative font-semibold font-sans after:-z-20 after:absolute after:h-1 after:w-1 after:bg-white after:left-5 overflow-hidden after:bottom-0 after:translate-y-full after:rounded-md after:hover:scale-[300] after:hover:transition-all after:hover:duration-700 after:transition-all after:duration-700 transition-all duration-700  text-2xl">
-                        إشترك الان
-                    </button>
-                    <button
-                        class="px-4 z-30 py-2 bg-white rounded-md text-soft_black hover:text-white relative font-semibold font-sans after:-z-20 after:absolute after:h-1 after:w-1 after:bg-soft_black after:left-5 overflow-hidden after:bottom-0 after:translate-y-full after:rounded-md after:hover:scale-[300] after:hover:transition-all after:hover:duration-700 after:transition-all after:duration-700 transition-all duration-700  text-2xl">
-                        تصفح الرحلات
-                    </button>
+                     <a href="/student-register">
+                        <button
+                            class="px-4 z-30 py-2 bg-soft_black rounded-md text-white hover:text-soft_black relative font-semibold font-sans after:-z-20 after:absolute after:h-1 after:w-1 after:bg-white after:left-5 overflow-hidden after:bottom-0 after:translate-y-full after:rounded-md after:hover:scale-[300] after:hover:transition-all after:hover:duration-700 after:transition-all after:duration-700 transition-all duration-700  text-2xl">
+                            إشترك الان
+                        </button>
+                    </a>
+                    <a href="/trips">
+                        <button
+                            class="px-4 z-30 py-2 bg-white rounded-md text-soft_black hover:text-white relative font-semibold font-sans after:-z-20 after:absolute after:h-1 after:w-1 after:bg-soft_black after:left-5 overflow-hidden after:bottom-0 after:translate-y-full after:rounded-md after:hover:scale-[300] after:hover:transition-all after:hover:duration-700 after:transition-all after:duration-700 transition-all duration-700  text-2xl">
+                            تصفح الرحلات
+                        </button>
+                    </a>
                 </div>
             </div>
 
@@ -321,7 +329,8 @@
             <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 md:gap-12">
                 <div class="text-center">
                     <img loading="lazy" class="rounded-full size-24 mx-auto"
-                        src="{{ $content->driver_1_image ? asset('storage/' . $content->driver_1_image) : asset('./assets/graphics//homeDrivers-images/driver_6.jpg') }}" alt="Image Description">
+                        src="{{ $content->driver_1_image ? asset('storage/' . $content->driver_1_image) : asset('./assets/graphics//homeDrivers-images/driver_6.jpg') }}"
+                        alt="Image Description">
                     <div class="mt-2 sm:mt-4">
                         <h3 class=" text-gray-800  font-sec font-bold text-2xl">
                             {{ $content['driver_1_name'] }}
@@ -333,7 +342,8 @@
                 <!-- End Col -->
                 <div class="text-center">
                     <img loading="lazy" class="rounded-full size-24 mx-auto"
-                        src="{{ $content->driver_2_image ? asset('storage/' . $content->driver_2_image) : asset('./assets/graphics//homeDrivers-images/driver_5.jpg') }}" alt="Image Description">
+                        src="{{ $content->driver_2_image ? asset('storage/' . $content->driver_2_image) : asset('./assets/graphics//homeDrivers-images/driver_5.jpg') }}"
+                        alt="Image Description">
                     <div class="mt-2 sm:mt-4">
                         <h3 class=" text-gray-800  font-sec font-bold text-2xl">
                             {{ $content['driver_2_name'] }}
@@ -346,7 +356,8 @@
                 <!-- End Col -->
                 <div class="text-center">
                     <img loading="lazy" class="rounded-full size-24 mx-auto"
-                        src="{{ $content->driver_3_image ? asset('storage/' . $content->driver_3_image) : asset('./assets/graphics//homeDrivers-images/driver_3.jpg') }}" alt="Image Description">
+                        src="{{ $content->driver_3_image ? asset('storage/' . $content->driver_3_image) : asset('./assets/graphics//homeDrivers-images/driver_3.jpg') }}"
+                        alt="Image Description">
                     <div class="mt-2 sm:mt-4">
                         <h3 class=" text-gray-800  font-sec font-bold text-2xl">
                             {{ $content['driver_3_name'] }}
@@ -359,7 +370,8 @@
                 <!-- End Col -->
                 <div class="text-center">
                     <img loading="lazy" class="rounded-full size-24 mx-auto"
-                        src="{{ $content->driver_4_image ? asset('storage/' . $content->driver_4_image) : asset('./assets/graphics//homeDrivers-images/driver_2.jpg') }}" alt="Image Description">
+                        src="{{ $content->driver_4_image ? asset('storage/' . $content->driver_4_image) : asset('./assets/graphics//homeDrivers-images/driver_2.jpg') }}"
+                        alt="Image Description">
                     <div class="mt-2 sm:mt-4">
                         <h3 class=" text-gray-800  font-sec font-bold text-2xl">
                             {{ $content['driver_4_name'] }}
@@ -372,7 +384,8 @@
                 <!-- End Col -->
                 <div class="text-center">
                     <img loading="lazy" class="rounded-full size-24 mx-auto"
-                        src="{{ $content->driver_5_image ? asset('storage/' . $content->driver_5_image) : asset('./assets/graphics//homeDrivers-images/driver_1.jpg') }}" alt="Image Description">
+                        src="{{ $content->driver_5_image ? asset('storage/' . $content->driver_5_image) : asset('./assets/graphics//homeDrivers-images/driver_1.jpg') }}"
+                        alt="Image Description">
                     <div class="mt-2 sm:mt-4">
                         <h3 class=" text-gray-800  font-sec font-bold text-2xl">
                             {{ $content['driver_5_name'] }}
@@ -385,7 +398,8 @@
                 <!-- End Col -->
                 <div class="text-center">
                     <img loading="lazy" class="rounded-full size-24 mx-auto"
-                        src="{{ $content->driver_6_image ? asset('storage/' . $content->driver_6_image) : asset('./assets/graphics//homeDrivers-images/driver_14.jpg') }}" alt="Image Description">
+                        src="{{ $content->driver_6_image ? asset('storage/' . $content->driver_6_image) : asset('./assets/graphics//homeDrivers-images/driver_14.jpg') }}"
+                        alt="Image Description">
                     <div class="mt-2 sm:mt-4">
                         <h3 class=" text-gray-800  font-sec font-bold text-2xl">
                             {{ $content['driver_6_name'] }}
@@ -398,7 +412,8 @@
                 <!-- End Col -->
                 <div class="text-center">
                     <img loading="lazy" class="rounded-full size-24 mx-auto"
-                        src="{{ $content->driver_7_image ? asset('storage/' . $content->driver_7_image) : asset('./assets/graphics//homeDrivers-images/driver_7.jpg') }}" alt="Image Description">
+                        src="{{ $content->driver_7_image ? asset('storage/' . $content->driver_7_image) : asset('./assets/graphics//homeDrivers-images/driver_7.jpg') }}"
+                        alt="Image Description">
                     <div class="mt-2 sm:mt-4">
                         <h3 class=" text-gray-800  font-sec font-bold text-2xl">
                             {{ $content['driver_7_name'] }}
@@ -411,7 +426,8 @@
                 <!-- End Col -->
                 <div class="text-center">
                     <img loading="lazy" class="rounded-full size-24 mx-auto"
-                        src="{{ $content->driver_8_image ? asset('storage/' . $content->driver_8_image) : asset('./assets/graphics//homeDrivers-images/driver_8.jpg') }}" alt="Image Description">
+                        src="{{ $content->driver_8_image ? asset('storage/' . $content->driver_8_image) : asset('./assets/graphics//homeDrivers-images/driver_8.jpg') }}"
+                        alt="Image Description">
                     <div class="mt-2 sm:mt-4">
                         <h3 class=" text-gray-800  font-sec font-bold text-2xl">
                             {{ $content['driver_8_name'] }}
@@ -424,7 +440,8 @@
                 <!-- End Col -->
                 <div class="text-center">
                     <img loading="lazy" class="rounded-full size-24 mx-auto"
-                        src="{{ $content->driver_9_image ? asset('storage/' . $content->driver_9_image) : asset('./assets/graphics//homeDrivers-images/driver_11.jpg') }}" alt="Image Description">
+                        src="{{ $content->driver_9_image ? asset('storage/' . $content->driver_9_image) : asset('./assets/graphics//homeDrivers-images/driver_11.jpg') }}"
+                        alt="Image Description">
                     <div class="mt-2 sm:mt-4">
                         <h3 class=" text-gray-800  font-sec font-bold text-2xl">
                             {{ $content['driver_9_name'] }}
@@ -437,7 +454,8 @@
                 <!-- End Col -->
                 <div class="text-center">
                     <img loading="lazy" class="rounded-full size-24 mx-auto"
-                        src="{{ $content->driver_10_image ? asset('storage/' . $content->driver_10_image) : asset('./assets/graphics//homeDrivers-images/driver_15.jpg') }}" alt="Image Description">
+                        src="{{ $content->driver_10_image ? asset('storage/' . $content->driver_10_image) : asset('./assets/graphics//homeDrivers-images/driver_15.jpg') }}"
+                        alt="Image Description">
                     <div class="mt-2 sm:mt-4">
                         <h3 class=" text-gray-800  font-sec font-bold text-2xl">
                             {{ $content['driver_10_name'] }}
