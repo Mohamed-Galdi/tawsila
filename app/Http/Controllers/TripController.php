@@ -47,24 +47,6 @@ class TripController extends Controller
         return view('trips.trips', compact('trips', 'areas', 'universities'));
     }
 
-
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
     /**
      * Display the specified resource.
      */
@@ -75,27 +57,4 @@ class TripController extends Controller
         return view('trips.trip', compact('trip'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Trip $trip)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Trip $trip)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Trip $trip)
-    {
-        //
-    }
 }

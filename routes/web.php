@@ -9,7 +9,6 @@ use App\Models\ContactPage;
 use App\Models\HomePage;
 use App\Models\Subscription;
 use Illuminate\Support\Facades\Route;
-use RealRashid\SweetAlert\Facades\Alert;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,6 +40,7 @@ Route::post('/contact-us', [GuestMessageController::class, 'store'])->name('cont
 Route::get('/login-choice', function () {
     return view('authentication.login_choice');
 })->name('login-choice');
+
 Route::get('/student-register', function () {
     return view('authentication.student_register');
 });
@@ -59,10 +59,8 @@ Route::middleware(['student'])->group(function () {
     Route::get('/trips/{trip}', [TripController::class, 'show'])->name('trips.show');
 });
 
+
+/////////////////////// Print confirmations //////////////////////
 Route::get('print-subscription/{subscription}', [SubscriptionController::class, 'print'])->name('print-subscription');
 Route::get('print-trip/{trip}', [TripController::class, 'print'])->name('print-trip');
 
-Route::get('/confirmation', function(){
-    $subscription = Subscription::first();
-    return view('pdf.confirmation', compact('subscription'));
-});
