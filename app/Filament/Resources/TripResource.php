@@ -45,12 +45,12 @@ class TripResource extends Resource
     {
         return $form
             ->schema([
-                Select::make('areas')->Relationship('areas', 'name')->native(false)->multiple()->label('المناطق')->preload(),
+                Select::make('areas')->Relationship('areas', 'name')->native(false)->multiple()->label('الأحياء ')->preload(),
                 Select::make('university_id')->Relationship('university', 'name')->native(false)->label('الجامعة'),
                 Select::make('bus_id')->native(false)->label('الحافلة')->options(Bus::where('status', 'متوفر')->get()->mapWithKeys(function ($bus) {
                     return [$bus->id => $bus->number];
                 })->toArray()),
-                
+
                 Select::make('driver_id')->native(false)->label('السائق')
                     ->options(function (string $operation, ?Trip $record = null) {
                         if ($operation === 'edit') {
@@ -148,7 +148,7 @@ class TripResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('areas.name')->badge()->color('info')->label('المناطق'),
+                Tables\Columns\TextColumn::make('areas.name')->badge()->color('info')->label('الأحياء '),
                 Tables\Columns\TextColumn::make('university.name')->label('الجامعة')->limit(15),
                 Tables\Columns\TextColumn::make('bus.number')->label('الحافلة'),
                 Tables\Columns\TextColumn::make('times_per_day')->label('عدد الرحلات في اليوم')->badge()->color('success')
@@ -186,7 +186,7 @@ class TripResource extends Resource
     public static function infolist(Infolist $infolist): Infolist
     {
         return $infolist->schema([
-            TextEntry::make('areas.name')->label('المناطق')->badge()->color('info'),
+            TextEntry::make('areas.name')->label('الأحياء ')->badge()->color('info'),
             TextEntry::make('university.name')->label('الجامعة')->color('info'),
             TextEntry::make('times_per_day')->label('عدد الرحلات في اليوم')->badge()->color('success')
                 ->state(function (Trip $record): string {

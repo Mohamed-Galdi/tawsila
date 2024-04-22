@@ -20,7 +20,7 @@
                     </div>
                     <hr class="my-3" />
                     <div class="flex flex-wrap gap-4 items-start">
-                        <div class="font-sec text-lg">المناطق : </div>
+                        <div class="font-sec text-lg">أحياء الرياض :</div>
 
                         <div class="flex gap-2 flex-wrap">
                             @foreach ($trip->areas as $area)

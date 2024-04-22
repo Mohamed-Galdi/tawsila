@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::create('contact_pages', function (Blueprint $table) {
             $table->id();
-            $table->string('email')->max(30)->default('00966 2 5466140');
-            $table->string('phone')->max(30)->default('contact@tawsila.com');
+            $table->string('email')->max(30)->default('contact@tawsila.com');
+            $table->string('phone')->max(30)->default('00966 2 5466140');
+            $table->string('emergency')->max(30)->default('00966 3 6254169');
             $table->string('address')->max(30)->default('الرياض -حي الملقا - انس مالك');
             $table->timestamps();
         });

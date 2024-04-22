@@ -5,6 +5,11 @@
         <div
             class="md:w-3/4 w-4/5 lg:w-2/3 min-h-[70vh] rounded-3xl shadow-2xl flex overflow-hidden mx-auto max-w-screen-xl">
             <div class=" w-full lg:w-2/3 md:w-1/2 backdrop-blur-sm bg-white/30 grid place-items-center p-8">
+                <a class="" href="driver-register"><button
+                        class="bg-soft_black text-white font-pr p-2 rounded-lg flex gap-2">التسجيل
+                        كسائق
+                        <img src="./assets/graphics/images/drvr.png" alt="" class="max-w-6">
+                    </button></a>
                 <form class="w-full" action="{{ route('studentRegister') }}" enctype="multipart/form-data" method="POST">
                     @csrf
                     <div class="w-full lg:flex gap-6">
@@ -70,11 +75,7 @@
                         type="submit">إنشاء حساب</button>
 
                 </form>
-                <a class="mt-6" href="driver-register"><button
-                        class="bg-soft_black text-white font-pr p-2 rounded-lg flex gap-2">التسجيل
-                        كسائق
-                        <img src="./assets/graphics/images/drvr.png" alt="" class="max-w-6">
-                    </button></a>
+
 
             </div>
             <div class="hidden md:block lg:w-1/3 w-1/2 bg-gradient-to-t from-soft_black to-tawsila-400 relative">
