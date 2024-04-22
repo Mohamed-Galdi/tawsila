@@ -13,7 +13,7 @@ use Filament\Infolists\Components\TextEntry;
 use Filament\Infolists\Concerns\InteractsWithInfolists;
 use Filament\Infolists\Contracts\HasInfolists;
 use Filament\Infolists\Infolist;
-                                
+
 class driver_trip extends Page implements HasForms, HasInfolists
 {
     use InteractsWithForms;
@@ -95,7 +95,7 @@ class driver_trip extends Page implements HasForms, HasInfolists
                         TextEntry::make('second_return_time')->label('عودة الرحلة  الثانية')->badge()->color('info')->icon('heroicon-s-clock'),
 
                     ])->columnSpan(4)->columns(5),
-                    ComponentsSection::make('المناطق')->schema([
+                    ComponentsSection::make('الأحياء ')->schema([
                         TextEntry::make('areas')->hiddenLabel()->badge()->color('info'),
                     ])->columnSpan(2),
                     ComponentsSection::make('الجامعة')->schema([

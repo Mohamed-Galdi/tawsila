@@ -144,7 +144,7 @@
     <div class=" text-soft_black font-pr py-4 px-8 text-justify  h-96 text-xl">
         <p class="">
             نود إبلاغكم بتأكيد اشتراككم في الرحلة المقررة. تحتوي هذه الوثيقة على معلومات مهمة تتعلق بالطالب والجامعة،
-            بالإضافة إلى تفاصيل الحافلة والسائق والمناطق التي ستُغطى خلال الرحلة. كما تتضمن الوثيقة رمزًا ثنائي الأبعاد
+            بالإضافة إلى تفاصيل الحافلة والسائق والأحياء التي ستُغطى خلال الرحلة. كما تتضمن الوثيقة رمزًا ثنائي الأبعاد
             (QR Code) الذي يسهل الوصول إلى موقعنا الإلكتروني لمزيد من المعلومات والتفاصيل. نرجو منكم الاحتفاظ بهذه
             الوثيقة وإحضارها معكم خلال الرحلة للإشارة إليها عند الحاجة. نتمنى لكم رحلة آمنة وممتعة.
         </p>
@@ -156,12 +156,12 @@
         // Function to print the page
         function printPage() {
             window.print(); // Print the page
-            
+
             // Close the window after printing or cancelling
             setTimeout(function() {
                 window.close(); // Close the window
             }, 1000); // Adjust the delay as needed (milliseconds)
-            
+
             // After a short delay to allow the page to render, convert it to PDF
             setTimeout(function() {
                 const pdf = new jsPDF(); // Create a new jsPDF instance

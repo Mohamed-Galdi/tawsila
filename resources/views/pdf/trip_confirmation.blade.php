@@ -151,7 +151,7 @@
     {{-- Footer message --}}
     <div class=" text-soft_black font-pr py-4 px-8 text-justify text-xl">
         <p class="">نود إبلاغكم بتأكيد مهمة القيادة المقررة للرحلة. تحتوي هذه الوثيقة على معلومات السائق الخاصة
-            بكم، بالإضافة إلى تفاصيل الجامعة والمناطق التي ستُغطى خلال الرحلة، وتوقيتاتها. نرجو منكم الاحتفاظ بهذه
+            بكم، بالإضافة إلى تفاصيل الجامعة والأحياء التي ستُغطى خلال الرحلة، وتوقيتاتها. نرجو منكم الاحتفاظ بهذه
             الوثيقة والاطلاع عليها قبل بدء الرحلة للتأكد من أنكم مستعدين للانطلاق. نتمنى لكم قيادة آمنة وموفقة. </p>
     </div>
 
@@ -161,12 +161,12 @@
         // Function to print the page
         function printPage() {
             window.print(); // Print the page
-            
+
             // Close the window after printing or cancelling
             setTimeout(function() {
                 window.close(); // Close the window
             }, 1000); // Adjust the delay as needed (milliseconds)
-            
+
             // After a short delay to allow the page to render, convert it to PDF
             setTimeout(function() {
                 const pdf = new jsPDF(); // Create a new jsPDF instance

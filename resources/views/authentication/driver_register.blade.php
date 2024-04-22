@@ -9,6 +9,11 @@
                 <img class=" absolute bottom-0" src="./assets/graphics/images/driver.png" alt="">
             </div>
             <div class=" w-full lg:w-2/3 md:w-1/2 backdrop-blur-sm bg-white/30 grid place-items-center p-8">
+                <a class="mb-4" href="student-register"><button
+                        class="bg-soft_black text-white font-pr p-2 rounded-lg flex gap-2">التسجيل
+                        كطالبة
+                        <img src="./assets/graphics/images/woman.png" alt="" class="max-w-6">
+                    </button></a>
                 <form class="w-full" action="{{ route('driverRegister') }}" enctype="multipart/form-data" method="POST">
                     @csrf
                     <div class="w-full lg:flex gap-6">
@@ -96,38 +101,36 @@
                         </div>
 
                         <div class="flex flex-col gap-2 w-full mt-3">
-                                <div class="relative flex items-center max-w-[11rem]">
-                                    <button type="button" id="increment-button"
-                                        data-input-counter-increment="experience"
-                                        class="bg-gray-100 hover:bg-gray-200 border border-gray-300 rounded-s-lg p-3 h-11 focus:ring-gray-100 dark:focus:ring-gray-700 focus:ring-2 focus:outline-none">
-                                        <svg class="w-3 h-3 text-gray-900 dark:text-white" aria-hidden="true"
-                                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
-                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                                stroke-width="2" d="M9 1v16M1 9h16" />
-                                        </svg>
-                                    </button>
-                                    <input type="text" id="experience" data-input-counter name="experience"
-                                        data-input-counter-min="1" data-input-counter-max="20"
-                                        aria-describedby="helper-text-explanation"
-                                        class="bg-gray-50 border-x-0 border-gray-300 h-11 font-medium text-center text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full pb-6 "
-                                        placeholder="" value="1" required />
-                                    <div
-                                        class="absolute bottom-1 start-1/2 -translate-x-1/2 rtl:translate-x-1/2 flex items-center text- text-gray-400 space-x-1 rtl:space-x-reverse">
-                                        
-                                        <span>سنوات خبرة </span>
-                                    </div>
-                                    <button type="button" id="decrement-button"
-                                        data-input-counter-decrement="experience"
-                                        class="bg-gray-100 hover:bg-gray-200 border border-gray-300 rounded-e-lg p-3 h-11 focus:ring-gray-100 dark:focus:ring-gray-700 focus:ring-2 focus:outline-none">
-                                        <svg class="w-3 h-3 text-gray-900 dark:text-white" aria-hidden="true"
-                                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 2">
-                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                                stroke-width="2" d="M1 1h16" />
-                                        </svg>
-                                    </button>
-                                    
+                            <div class="relative flex items-center max-w-[11rem]">
+                                <button type="button" id="increment-button" data-input-counter-increment="experience"
+                                    class="bg-gray-100 hover:bg-gray-200 border border-gray-300 rounded-s-lg p-3 h-11 focus:ring-gray-100 dark:focus:ring-gray-700 focus:ring-2 focus:outline-none">
+                                    <svg class="w-3 h-3 text-gray-900 dark:text-white" aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="M9 1v16M1 9h16" />
+                                    </svg>
+                                </button>
+                                <input type="text" id="experience" data-input-counter name="experience"
+                                    data-input-counter-min="1" data-input-counter-max="20"
+                                    aria-describedby="helper-text-explanation"
+                                    class="bg-gray-50 border-x-0 border-gray-300 h-11 font-medium text-center text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full pb-6 "
+                                    placeholder="" value="1" required />
+                                <div
+                                    class="absolute bottom-1 start-1/2 -translate-x-1/2 rtl:translate-x-1/2 flex items-center text- text-gray-400 space-x-1 rtl:space-x-reverse">
+
+                                    <span>سنوات خبرة </span>
                                 </div>
-                                {{-- <p id="helper-text-explanation" class="mt-2 text-sm text-gray-500 dark:text-gray-400">
+                                <button type="button" id="decrement-button" data-input-counter-decrement="experience"
+                                    class="bg-gray-100 hover:bg-gray-200 border border-gray-300 rounded-e-lg p-3 h-11 focus:ring-gray-100 dark:focus:ring-gray-700 focus:ring-2 focus:outline-none">
+                                    <svg class="w-3 h-3 text-gray-900 dark:text-white" aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 2">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="M1 1h16" />
+                                    </svg>
+                                </button>
+
+                            </div>
+                            {{-- <p id="helper-text-explanation" class="mt-2 text-sm text-gray-500 dark:text-gray-400">
                                     Please select the number of bedrooms.</p> --}}
 
                         </div>
@@ -137,11 +140,7 @@
                         type="submit">إنشاء حساب</button>
 
                 </form>
-                <a class="mt-4" href="student-register"><button
-                        class="bg-soft_black text-white font-pr p-2 rounded-lg flex gap-2">التسجيل
-                        كطالبة
-                        <img src="./assets/graphics/images/woman.png" alt="" class="max-w-6">
-                    </button></a>
+
 
             </div>
         </div>

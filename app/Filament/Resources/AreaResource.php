@@ -21,10 +21,10 @@ class AreaResource extends Resource
 
     protected static ?string $navigationGroup = 'الخدمات';
     protected static ?int $navigationSort = 2;
-    protected static ?string $navigationLabel = 'المناطق';
+    protected static ?string $navigationLabel = 'الأحياء ';
     protected static ?string $navigationIcon = 'icon-area';
-    protected static ?string $modelLabel = 'منطقة';
-    protected static ?string $pluralModelLabel = 'مناطق';
+    protected static ?string $modelLabel = 'حي';
+    protected static ?string $pluralModelLabel = ' أحياء الرياض ';
 
 
     public static function form(Form $form): Form
@@ -34,7 +34,7 @@ class AreaResource extends Resource
                 Forms\Components\TextInput::make('name')
                     ->required()
                     ->maxLength(255)
-                    ->label('إسم المنطقة'),
+                    ->label('إسم الحي'),
                 Forms\Components\Select::make('status')->label('الحالة')
                     ->required()
                     ->options(['مغطاة' => 'مغطاة', 'غير مغطاة' => 'غير مغطاة']),
@@ -45,10 +45,10 @@ class AreaResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('name')->label('إسم المنطقة')->searchable(),
+                Tables\Columns\TextColumn::make('name')->label('إسم الحي')->searchable(),
                 Tables\Columns\TextColumn::make('statusx')->label('الحالة')->badge()
                     ->state(function (Area $record): string {
-                        return $record->trips()->count() == 0 ? 'غير مغطاة': 'مغطاة';
+                        return $record->trips()->count() == 0 ? 'غير مغطاة' : 'مغطاة';
                     })
                     ->color(fn (string $state): string => match ($state) {
                         'مغطاة' => 'success',

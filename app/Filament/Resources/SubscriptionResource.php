@@ -300,7 +300,7 @@ class SubscriptionResource extends Resource
                     TextEntry::make('trip.university.name')->hiddenLabel(),
                     TextEntry::make('trip.university.address')->hiddenLabel(),
                 ])->columnSpan(2)->columns(1),
-                Fieldset::make('المناطق')->schema([
+                Fieldset::make('الأحياء ')->schema([
                     TextEntry::make('trip.areas.name')->hiddenLabel()->badge()->color('info'),
                 ])->columnSpan(2),
             ])->columns(5)
