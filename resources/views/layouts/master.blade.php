@@ -11,8 +11,7 @@
     <title>{{ config('app.name', 'Tawsila') }}</title>
 
     @vite('resources/css/app.css')
-    @vite('resources/css/animation.css')
-    @vite('node_modules/flowbite/dist/flowbite.min.js')
+    @vite('resources/js/app.js')
 
     {{-- favicon --}}
     <link rel="icon" type="image/x-icon" href="/assets/graphics/logos/favicon.png">
