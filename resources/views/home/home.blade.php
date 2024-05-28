@@ -13,7 +13,7 @@
                     <a href="/student-register">
                         <button
                             class="px-4 z-30 py-2 bg-soft_black rounded-md text-white hover:text-soft_black relative font-semibold font-sans after:-z-20 after:absolute after:h-1 after:w-1 after:bg-white after:left-5 overflow-hidden after:bottom-0 after:translate-y-full after:rounded-md after:hover:scale-[300] after:hover:transition-all after:hover:duration-700 after:transition-all after:duration-700 transition-all duration-700  text-2xl">
-                            إشترك daba
+                            إشترك now
                         </button>
                     </a>
                     <a href="/trips">
