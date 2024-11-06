@@ -8,12 +8,15 @@
         "php": "^8.1",
         "barryvdh/laravel-dompdf": "^2.1",
         "filament/filament": "^3.2",
+        "filament/infolists": "^3.2.115",
+        "filament/tables": "^3.2.115",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^10.10",
         "laravel/sanctum": "^3.3",
         "laravel/tinker": "^2.8",
+        "livewire/livewire": "^3.5.2",
         "realrashid/sweet-alert": "^7.1",
-        "yepsua/filament-rating-field": "^0.3.0"
+        "yepsua/filament-rating-field": "^0.6.0"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.12",
